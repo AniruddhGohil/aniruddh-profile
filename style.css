@@ -71,7 +71,21 @@ ul {
     margin-left: 20px;
 }
 
-/* Mobile Responsive */
+.profiles a {
+    margin-right: 14px;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    color: #000;
+    font-size: 15px;
+}
+
+.profiles a:hover {
+    background: #000;
+    color: #fff;
+    padding: 2px 6px;
+}
+
+/* Mobile responsive */
 @media (max-width: 768px) {
     .profile-header {
         flex-direction: column;
