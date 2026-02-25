@@ -38,12 +38,54 @@ a {
 
 .profile-header {
     display: flex;
-    align-items: flex-start;
-    gap: 30px;
-    margin-top: 10px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    margin-top: 20px;
+}
+
+.profile-text {
+    max-width: 480px;
+}
+
+.tagline {
+    margin-top: 8px;
 }
 
 .profile-img {
-    width: 190px;
-    border-radius: 8px;
+    width: 220px;
+    border-radius: 10px;
+}
+
+.header-buttons {
+    margin-top: 18px;
+}
+
+.header-buttons a {
+    display: inline-block;
+    margin-right: 12px;
+    padding: 7px 16px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #000;
+}
+
+.header-buttons a:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .profile-img {
+        width: 180px;
+    }
 }
