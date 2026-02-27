@@ -36,9 +36,10 @@ h1 {
 
 /* Image - Smaller and Closer */
 .profile-img {
-    width: 220px;           /* reduced size */
+    width: 220px;
     border-radius: 12px;
-    margin-left: 10px;      /* brings image closer */
+    margin-left: 10px;
+    margin-top: 15px;   /* moves image slightly down */
 }
 
 /* Buttons */
