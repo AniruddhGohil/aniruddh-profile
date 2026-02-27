@@ -2,55 +2,50 @@ body {
     font-family: Georgia, "Times New Roman", serif;
     background: #fafafa;
     color: #111;
-    max-width: 1000px;
-    margin: auto;
-    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 20px;
     line-height: 1.7;
     letter-spacing: 0.2px;
+    text-align: center; /* Center everything */
 }
 
-/* Header Layout */
+/* Header */
 .profile-header {
     display: flex;
-    align-items: center;
-    gap: 40px;              /* reduced gap */
-    margin-bottom: 60px;
+    flex-direction: column;  /* Stack vertically */
+    align-items: center;     /* Center horizontally */
+    gap: 25px;
+    margin-bottom: 70px;
 }
 
-/* Text Block */
-.profile-text {
-    max-width: 520px;
-}
-
-/* Title */
+/* Name */
 h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
+    font-size: 44px;
+    margin-bottom: 5px;
 }
 
 /* Subtitle */
 .tagline {
     font-size: 18px;
-    margin-top: 8px;
+    margin-bottom: 20px;
 }
 
-/* Image - Smaller and Closer */
+/* Image */
 .profile-img {
     width: 220px;
-    border-radius: 12px;
-    margin-left: 10px;
-    margin-top: 30px;   /* lowered further */
+    border-radius: 14px;
 }
 
 /* Buttons */
 .header-buttons {
-    margin-top: 22px;
+    margin-top: 10px;
 }
 
 .header-buttons a {
     display: inline-block;
-    margin-right: 14px;
-    padding: 8px 18px;
+    margin: 0 10px;
+    padding: 8px 20px;
     border: 1px solid #000;
     border-radius: 5px;
     font-size: 14px;
@@ -65,23 +60,26 @@ h1 {
 
 /* Content Section */
 .content {
-    max-width: 760px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 h2 {
-    margin-top: 50px;
+    margin-top: 60px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 6px;
     font-size: 26px;
 }
 
 ul {
-    margin-left: 20px;
+    list-style-position: inside;
+    padding-left: 0;
 }
 
-/* Social Links */
+/* Social Profiles */
 .profiles a {
-    margin-right: 14px;
+    margin: 0 8px;
     text-decoration: none;
     border-bottom: 1px solid #000;
     color: #000;
@@ -96,18 +94,11 @@ ul {
 
 /* Mobile */
 @media (max-width: 768px) {
-    .profile-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 25px;
+    h1 {
+        font-size: 32px;
     }
 
     .profile-img {
-        width: 190px;
-        margin-left: 0;
-    }
-
-    h1 {
-        font-size: 32px;
+        width: 180px;
     }
 }
