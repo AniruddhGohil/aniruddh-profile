@@ -13,14 +13,13 @@ body {
 .profile-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px; /* reduced gap */
+    gap: 40px;              /* reduced gap */
     margin-bottom: 60px;
 }
 
 /* Text Block */
 .profile-text {
-    max-width: 560px;
+    max-width: 520px;
 }
 
 /* Title */
@@ -35,11 +34,11 @@ h1 {
     margin-top: 8px;
 }
 
-/* Image — shifted slightly LEFT */
+/* Image - Smaller and Closer */
 .profile-img {
-    width: 260px;
+    width: 220px;           /* reduced size */
     border-radius: 12px;
-    margin-left: -20px; /* THIS moves image into whitespace */
+    margin-left: 10px;      /* brings image closer */
 }
 
 /* Buttons */
@@ -79,7 +78,7 @@ ul {
     margin-left: 20px;
 }
 
-/* Social Profiles */
+/* Social Links */
 .profiles a {
     margin-right: 14px;
     text-decoration: none;
@@ -94,17 +93,17 @@ ul {
     padding: 2px 6px;
 }
 
-/* Mobile Responsive */
+/* Mobile */
 @media (max-width: 768px) {
     .profile-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 30px;
+        gap: 25px;
     }
 
     .profile-img {
-        width: 200px;
-        margin-left: 0; /* reset shift on mobile */
+        width: 190px;
+        margin-left: 0;
     }
 
     h1 {
