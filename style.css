@@ -72,9 +72,12 @@ h2 {
     font-size: 26px;
 }
 
+/* Center the list block but keep text left-aligned */
 ul {
-    list-style-position: inside;
-    padding-left: 0;
+    display: inline-block;      /* allows centering */
+    text-align: left;           /* text reads left to right */
+    margin: 20px auto;          /* centers the block */
+    padding-left: 20px;         /* proper bullet spacing */
 }
 
 /* Social Profiles */
