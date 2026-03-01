@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aniruddhgohil.github.io/aniruddh-profile/sitemap.xml
