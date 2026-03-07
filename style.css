@@ -35,10 +35,17 @@ nav {
 }
 nav.scrolled { border-color: var(--border); padding: 14px 60px; }
 .nav-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem; font-weight: 600;
-  letter-spacing: 0.02em; color: var(--ink); text-decoration: none;
+  display: flex; align-items: center;
+  text-decoration: none;
 }
+.nav-logo-img {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  transition: border-color 0.2s;
+}
+.nav-logo:hover .nav-logo-img { border-color: var(--accent); }
 .nav-links { display: flex; gap: 36px; list-style: none; }
 .nav-links a {
   font-size: 0.875rem; font-weight: 500; color: var(--ink-soft);
