@@ -1,107 +1,241 @@
 body {
-    font-family: Georgia, "Times New Roman", serif;
-    background: #fafafa;
-    color: #111;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 80px 20px;
-    line-height: 1.7;
-    letter-spacing: 0.2px;
-    text-align: center; /* Center everything */
+
+font-family: Georgia, serif;
+margin: 0;
+background: #fafafa;
+color: #111;
+
 }
 
-/* Header */
-.profile-header {
-    display: flex;
-    flex-direction: column;  /* Stack vertically */
-    align-items: center;     /* Center horizontally */
-    gap: 25px;
-    margin-bottom: 70px;
+
+/* NAVBAR */
+
+.navbar {
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 25px 60px;
+
 }
 
-/* Name */
-h1 {
-    font-size: 44px;
-    margin-bottom: 5px;
+.navbar nav a {
+
+margin-left: 25px;
+text-decoration: none;
+color: #111;
+font-size: 15px;
+
 }
 
-/* Subtitle */
-.tagline {
-    font-size: 18px;
-    margin-bottom: 20px;
+.connect-btn {
+
+background: black;
+color: white;
+padding: 10px 18px;
+border-radius: 6px;
+
 }
 
-/* Image */
-.profile-img {
-    width: 220px;
-    border-radius: 14px;
+
+/* HERO */
+
+.hero {
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 80px 60px;
+
 }
 
-/* Buttons */
-.header-buttons {
-    margin-top: 10px;
+.hero-text {
+
+max-width: 600px;
+
 }
 
-.header-buttons a {
-    display: inline-block;
-    margin: 0 10px;
-    padding: 8px 20px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    font-size: 14px;
-    text-decoration: none;
-    color: #000;
+.hero h1 {
+
+font-size: 64px;
+line-height: 1.1;
+margin-bottom: 25px;
+
 }
 
-.header-buttons a:hover {
-    background: #000;
-    color: #fff;
+.highlight {
+
+color: #2f6fed;
+
 }
 
-/* Content Section */
-.content {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
+.hero-description {
+
+font-size: 18px;
+line-height: 1.7;
+margin-bottom: 35px;
+
 }
 
-h2 {
-    margin-top: 60px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 6px;
-    font-size: 26px;
+
+/* BUTTONS */
+
+.hero-buttons a {
+
+text-decoration: none;
+padding: 14px 24px;
+border-radius: 6px;
+margin-right: 15px;
+
 }
 
-/* Center the list block but keep text left-aligned */
-ul {
-    display: inline-block;      /* allows centering */
-    text-align: left;           /* text reads left to right */
-    margin: 20px auto;          /* centers the block */
-    padding-left: 20px;         /* proper bullet spacing */
+.primary-btn {
+
+background: black;
+color: white;
+
 }
 
-/* Social Profiles */
-.profiles a {
-    margin: 0 8px;
-    text-decoration: none;
-    border-bottom: 1px solid #000;
-    color: #000;
-    font-size: 15px;
+.secondary-btn {
+
+border: 1px solid black;
+
 }
 
-.profiles a:hover {
-    background: #000;
-    color: #fff;
-    padding: 2px 6px;
+
+/* STATS */
+
+.hero-stats {
+
+display: flex;
+margin-top: 40px;
+
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 32px;
-    }
+.hero-stats div {
 
-    .profile-img {
-        width: 180px;
-    }
+margin-right: 40px;
+
+}
+
+.hero-stats strong {
+
+font-size: 28px;
+display: block;
+
+}
+
+
+/* IMAGE */
+
+.hero-image img {
+
+width: 340px;
+border-radius: 16px;
+
+}
+
+
+/* EXPERTISE */
+
+.expertise {
+
+padding: 80px 60px;
+
+}
+
+.expertise ul {
+
+list-style: none;
+padding: 0;
+
+}
+
+.expertise li {
+
+font-size: 18px;
+padding: 10px 0;
+
+}
+
+
+/* CASE STUDIES */
+
+.case-studies {
+
+padding: 80px 60px;
+
+}
+
+.case-grid {
+
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+gap: 30px;
+margin-top: 40px;
+
+}
+
+.case-card {
+
+background: white;
+padding: 30px;
+border-radius: 12px;
+box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+
+}
+
+
+/* OVERVIEW */
+
+.overview {
+
+padding: 80px 60px;
+max-width: 900px;
+
+}
+
+.overview h2 {
+
+font-size: 32px;
+
+}
+
+
+/* CTA */
+
+.cta {
+
+text-align: center;
+padding: 100px 60px;
+background: #111;
+color: white;
+
+}
+
+.cta h2 {
+
+font-size: 36px;
+margin-bottom: 20px;
+
+}
+
+.cta p {
+
+max-width: 600px;
+margin: auto;
+margin-bottom: 30px;
+
+}
+
+
+/* FOOTER */
+
+.footer {
+
+text-align: center;
+padding: 40px;
+font-size: 14px;
+background: #f1f1f1;
+
 }
