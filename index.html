@@ -54,6 +54,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </a>
   <ul class="nav-links">
     <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#tool">Tool</a></li>
     <li><a href="#cases">Case Studies</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="https://wa.me/+919833993229" class="nav-cta">Connect</a></li>
@@ -173,6 +174,69 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <span class="exp-tag">GSC</span>
         <span class="exp-tag">GA4</span>
         <span class="exp-tag">Looker Studio</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TOOL PREVIEW -->
+<section id="tool">
+  <div class="section-header reveal">
+    <span class="section-label">Product concept</span>
+    <h2>AI SEO Platform Mockup</h2>
+    <p class="section-intro">A tool experience inspired by modern AI SEO platforms—showing modular capabilities, workflow previews, and quick feature switching.</p>
+  </div>
+
+  <div class="tool-shell reveal">
+    <div class="tool-list">
+      <h3>Explore the platform</h3>
+      <button class="tool-item active" data-title="AI SEO Suite" data-desc="End-to-end platform for SEO, AEO, and GEO execution." data-point-a="Discover opportunities" data-point-b="Automate recommendations" data-point-c="Track impact across channels">
+        <span class="tool-icon">🔎</span>
+        <span>
+          <strong>AI SEO Suite</strong>
+          <small>End-to-end platform for SEO, AEO and GEO</small>
+        </span>
+      </button>
+      <button class="tool-item" data-title="Content AI" data-desc="Generate and optimize high-impact content for faster organic growth." data-point-a="Intent-based briefs" data-point-b="SERP-aligned outlines" data-point-c="Auto-refresh old pages">
+        <span class="tool-icon">✍️</span>
+        <span>
+          <strong>Content AI</strong>
+          <small>Generate high-impact content with SEO scoring</small>
+        </span>
+      </button>
+      <button class="tool-item" data-title="Internal Linking AI" data-desc="Build contextual internal links at scale to strengthen authority." data-point-a="Entity mapping" data-point-b="Anchor-text suggestions" data-point-c="One-click implementation">
+        <span class="tool-icon">🔗</span>
+        <span>
+          <strong>Internal Linking AI</strong>
+          <small>Automate internal linking opportunities</small>
+        </span>
+      </button>
+      <button class="tool-item" data-title="GEO Optimizer" data-desc="Track and improve visibility across AI answer engines." data-point-a="Prompt presence monitoring" data-point-b="Citation coverage insights" data-point-c="AEO playbooks by intent">
+        <span class="tool-icon">🤖</span>
+        <span>
+          <strong>Generative Engine Optimization</strong>
+          <small>Track and win visibility in AI answer engines</small>
+        </span>
+      </button>
+    </div>
+
+    <div class="tool-preview">
+      <p class="tool-kicker">Achieve 3× content velocity with AI workflows</p>
+      <div class="preview-card">
+        <div class="preview-head">
+          <div class="preview-tag">Live Demo</div>
+          <div class="preview-badge">SEO + AEO + GEO</div>
+        </div>
+        <h3 id="previewTitle">AI SEO Suite</h3>
+        <p id="previewDesc">End-to-end platform for SEO, AEO, and GEO execution.</p>
+        <ul id="previewPoints">
+          <li>Discover opportunities</li>
+          <li>Automate recommendations</li>
+          <li>Track impact across channels</li>
+        </ul>
+        <a href="#profiles" class="preview-cta">Request Prototype Walkthrough</a>
       </div>
     </div>
   </div>
@@ -337,6 +401,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
   }, { threshold: 0.12 });
   reveals.forEach(el => observer.observe(el));
+
+  // Tool preview switcher
+  const toolItems = document.querySelectorAll('.tool-item');
+  const previewTitle = document.getElementById('previewTitle');
+  const previewDesc = document.getElementById('previewDesc');
+  const previewPoints = document.getElementById('previewPoints');
+
+  toolItems.forEach(item => {
+    item.addEventListener('click', () => {
+      toolItems.forEach(btn => btn.classList.remove('active'));
+      item.classList.add('active');
+      previewTitle.textContent = item.dataset.title;
+      previewDesc.textContent = item.dataset.desc;
+      previewPoints.innerHTML = `
+        <li>${item.dataset.pointA}</li>
+        <li>${item.dataset.pointB}</li>
+        <li>${item.dataset.pointC}</li>
+      `;
+    });
+  });
 </script>
 </body>
 </html>
