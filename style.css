@@ -226,65 +226,62 @@ h2 {
 }
 
 /* ============================================================
-   CASE STUDIES SECTION — case-studies.css  (v2 — wider layout)
+   CASE STUDIES SECTION — case-studies.css
+   All 6 cards share the same two-column layout:
+   coloured left panel (icon + tags) + white right body (text + metrics)
    ============================================================ */
 
 :root {
   --cs-bg:           #ffffff;
-  --cs-bg-subtle:    #f8f9fc;
   --cs-border:       #e5e7eb;
   --cs-text-primary: #0f172a;
   --cs-text-muted:   #64748b;
   --cs-accent:       #2563eb;
   --cs-accent-light: #eff6ff;
-  --cs-radius-card:  16px;
-  --cs-radius-tag:   6px;
-  --cs-shadow:       0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.06);
-  --cs-shadow-hover: 0 4px 8px rgba(0,0,0,.08), 0 12px 32px rgba(37,99,235,.12);
-  --cs-transition:   0.22s cubic-bezier(0.4,0,0.2,1);
+  --cs-radius:       16px;
+  --cs-shadow:       0 1px 3px rgba(0,0,0,.05), 0 4px 20px rgba(0,0,0,.07);
+  --cs-shadow-hover: 0 6px 12px rgba(0,0,0,.08), 0 16px 40px rgba(37,99,235,.13);
+  --cs-ease:         0.24s cubic-bezier(0.4,0,0.2,1);
 }
 
-/* ── Section: full-width breakout from parent container ── */
+/* ── Section: breaks out of any narrow parent ── */
 .cs-section {
-  /* Break out of any parent max-width */
   width: 100vw;
   position: relative;
   left: 50%;
-  right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-
   background: var(--cs-bg);
   padding: 96px 0 88px;
 }
 
-/* Inner wrapper constrains content to 1200px */
+/* Constrain inner content to 1100px */
 .cs-section > * {
-  max-width: 1200px;
+  max-width: 1100px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-inline: clamp(24px, 5vw, 72px);
+  padding-inline: clamp(20px, 5vw, 64px);
   box-sizing: border-box;
 }
 
 /* ── Header ── */
 .cs-header {
-  margin-bottom: 48px;
+  margin-bottom: 44px;
 }
 
 .cs-eyebrow {
   display: inline-block;
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   color: var(--cs-accent);
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 
 .cs-title {
-  font-size: clamp(28px, 3.5vw, 42px);
+  font-size: clamp(26px, 3.5vw, 40px);
   font-weight: 700;
   color: var(--cs-text-primary);
   line-height: 1.15;
@@ -296,18 +293,27 @@ h2 {
   font-size: 15px;
   color: var(--cs-text-muted);
   line-height: 1.65;
-  max-width: 500px;
+  max-width: 480px;
   margin: 0;
 }
 
-/* ── Shared card base ── */
+/* ── Card — same layout for every card ── */
 .cs-card {
-  background: var(--cs-bg);
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 220px;
   border: 1px solid var(--cs-border);
-  border-radius: var(--cs-radius-card);
+  border-radius: var(--cs-radius);
   box-shadow: var(--cs-shadow);
   overflow: hidden;
-  transition: box-shadow var(--cs-transition), transform var(--cs-transition);
+  position: relative;
+  transition: box-shadow var(--cs-ease), transform var(--cs-ease);
+  margin-bottom: 20px;
+  background: var(--cs-bg);
+}
+
+.cs-card:last-child {
+  margin-bottom: 0;
 }
 
 .cs-card:hover {
@@ -315,53 +321,46 @@ h2 {
   transform: translateY(-3px);
 }
 
-/* ── Featured card ── */
-.cs-card--featured {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  margin-bottom: 24px;
-  min-height: 300px;
-  position: relative;
+/* ── Hover accent bar along bottom ── */
+.cs-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cs-accent), #60a5fa);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--cs-ease);
+  border-radius: 0 0 var(--cs-radius) var(--cs-radius);
 }
+.cs-card:hover::after { transform: scaleX(1); }
 
-.cs-card--featured .cs-card__visual {
-  background: linear-gradient(145deg, #eff6ff 0%, #dbeafe 100%);
+/* ── Left panel (coloured) ── */
+.cs-card__visual {
+  background: linear-gradient(145deg, var(--panel-from, #eff6ff), var(--panel-to, #dbeafe));
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 40px 36px;
+  padding: 36px 32px;
+  gap: 20px;
 }
 
-.cs-card--featured .cs-card__body {
-  padding: 44px 52px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* ── Icon wrap ── */
+/* ── Icon ── */
 .cs-card__icon-wrap {
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   border-radius: 14px;
   overflow: hidden;
   flex-shrink: 0;
 }
 
-.cs-card__icon-wrap--sm {
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
-}
-
-.cs-card__icon-wrap svg,
-.cs-card__icon-wrap--sm svg {
+.cs-card__icon-wrap svg {
   width: 100%;
   height: 100%;
   display: block;
 }
 
-/* ── Tags ── */
+/* ── Tags inside left panel ── */
 .cs-card__tags {
   display: flex;
   flex-wrap: wrap;
@@ -371,50 +370,73 @@ h2 {
 .cs-tag {
   font-size: 11px;
   font-weight: 500;
-  background: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.72);
   color: var(--cs-text-muted);
-  padding: 4px 10px;
-  border-radius: var(--cs-radius-tag);
+  padding: 4px 9px;
+  border-radius: 6px;
   border: 1px solid rgba(255,255,255,0.5);
   white-space: nowrap;
   backdrop-filter: blur(4px);
 }
 
-/* ── Card body text ── */
+/* ── Market badge (top-right corner) ── */
+.cs-card[data-market]::before {
+  content: attr(data-market);
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: var(--cs-accent-light);
+  color: var(--cs-accent);
+  padding: 3px 9px;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+/* ── Right body ── */
+.cs-card__body {
+  padding: 36px 48px 36px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
 .cs-card__domain {
   font-size: 12px;
   font-weight: 600;
   color: var(--cs-accent);
   letter-spacing: 0.04em;
-  margin: 0 0 8px;
+  margin: 0 0 7px;
   text-transform: lowercase;
 }
 
 .cs-card__title {
-  font-size: 21px;
+  font-size: 19px;
   font-weight: 700;
   color: var(--cs-text-primary);
   line-height: 1.25;
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   letter-spacing: -0.015em;
+  /* leave room for the ANZ/UAE badge */
+  padding-right: 56px;
 }
 
 .cs-card__desc {
   font-size: 14px;
   color: var(--cs-text-muted);
   line-height: 1.7;
-  margin: 0 0 28px;
+  margin: 0 0 24px;
+  max-width: 560px;
 }
 
 /* ── Metrics ── */
 .cs-metrics {
   display: flex;
-  gap: 48px;
+  gap: 44px;
   align-items: flex-end;
-}
-
-.cs-metrics--row {
-  gap: 28px;
 }
 
 .cs-metric {
@@ -424,134 +446,73 @@ h2 {
 }
 
 .cs-metric__value {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 800;
   color: var(--cs-text-primary);
-  letter-spacing: -0.035em;
+  letter-spacing: -0.03em;
   line-height: 1;
 }
 
-.cs-metric--secondary .cs-metric__value {
-  font-size: 26px;
+.cs-metric--accent .cs-metric__value {
   color: var(--cs-accent);
+  font-size: 26px;
 }
 
 .cs-metric__label {
   font-size: 12px;
   color: var(--cs-text-muted);
-  line-height: 1.4;
+  line-height: 1.45;
 }
-
-/* ── Grid: 3 columns ── */
-.cs-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-/* ── Grid cards ── */
-.cs-card--grid {
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  position: relative;
-}
-
-.cs-card__top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.cs-card__top .cs-card__tags {
-  justify-content: flex-end;
-}
-
-.cs-card--grid .cs-card__domain { margin: 0; }
-.cs-card--grid .cs-card__title  { font-size: 16px; margin: 0; }
-.cs-card--grid .cs-card__desc   { font-size: 13.5px; margin: 0; flex: 1; }
-.cs-card--grid .cs-metrics--row { margin-top: auto; }
-
-.cs-card--grid .cs-metric__value                       { font-size: 24px; }
-.cs-card--grid .cs-metric--secondary .cs-metric__value { font-size: 20px; }
-
-/* ── Market badge ── */
-.cs-card[data-market]::before {
-  content: attr(data-market);
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  background: var(--cs-accent-light);
-  color: var(--cs-accent);
-  padding: 3px 8px;
-  border-radius: 4px;
-}
-
-.cs-card--featured[data-market]::before {
-  top: 20px;
-  right: 20px;
-}
-
-/* ── Hover accent bar ── */
-.cs-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--cs-accent), #60a5fa);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--cs-transition);
-  border-radius: 0 0 var(--cs-radius-card) var(--cs-radius-card);
-}
-
-.cs-card:hover::after { transform: scaleX(1); }
 
 /* ── Responsive ── */
-@media (max-width: 1100px) {
-  .cs-card--featured {
-    grid-template-columns: 260px 1fr;
+@media (max-width: 860px) {
+  .cs-card {
+    grid-template-columns: 200px 1fr;
   }
-  .cs-card--featured .cs-card__body {
-    padding: 36px 40px;
+  .cs-card__visual {
+    padding: 28px 24px;
   }
-  .cs-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .cs-card__body {
+    padding: 28px 32px 28px 28px;
+  }
+  .cs-card__title {
+    font-size: 17px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .cs-section {
-    padding-block: 64px 52px;
+    padding-block: 60px 52px;
   }
-  .cs-card--featured {
+
+  .cs-card {
     grid-template-columns: 1fr;
     min-height: unset;
   }
-  .cs-card--featured .cs-card__visual {
+
+  .cs-card__visual {
     flex-direction: row;
     align-items: center;
-    padding: 24px 28px;
+    padding: 20px 24px;
     gap: 16px;
+    justify-content: flex-start;
   }
-  .cs-card--featured .cs-card__body {
-    padding: 28px 32px;
-  }
-  .cs-metrics { gap: 32px; }
-}
 
-@media (max-width: 580px) {
-  .cs-grid { grid-template-columns: 1fr; }
-  .cs-metrics { gap: 20px; }
-  .cs-card--featured .cs-card__visual { flex-wrap: wrap; }
-  .cs-metric__value { font-size: 26px; }
+  .cs-card__body {
+    padding: 24px;
+  }
+
+  .cs-card__title {
+    padding-right: 48px;
+    font-size: 16px;
+  }
+
+  .cs-metrics {
+    gap: 24px;
+  }
+
+  .cs-metric__value { font-size: 24px; }
+  .cs-metric--accent .cs-metric__value { font-size: 20px; }
 }
 
 /* ── TOOL MOCKUP ── */
