@@ -225,45 +225,355 @@ h2 {
   background: var(--accent-light); color: var(--accent); font-weight: 500;
 }
 
-/* ── CASE STUDIES ── */
-#cases { background: var(--cream); }
-.cases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-.case-card {
-  background: var(--white); border-radius: 20px;
-  border: 1px solid var(--border); overflow: hidden;
-  transition: transform 0.25s, box-shadow 0.25s;
-  cursor: default;
+/* ============================================================
+   CASE STUDIES SECTION — case-studies.css
+   Matches the clean, minimal aesthetic of aniruddh-gohil's
+   existing portfolio site (white bg, dark text, blue accents).
+   ============================================================ */
+
+/* ── Variables (extend your existing ones if you have them) ── */
+:root {
+  --cs-bg:          #ffffff;
+  --cs-bg-subtle:   #f8f9fc;
+  --cs-border:      #e5e7eb;
+  --cs-text-primary:#0f172a;
+  --cs-text-muted:  #64748b;
+  --cs-accent:      #2563eb;
+  --cs-accent-light:#eff6ff;
+  --cs-tag-bg:      #f1f5f9;
+  --cs-tag-text:    #475569;
+  --cs-radius-card: 16px;
+  --cs-radius-tag:  6px;
+  --cs-shadow:      0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.06);
+  --cs-shadow-hover:0 4px 8px rgba(0,0,0,.08), 0 12px 32px rgba(37,99,235,.12);
+  --cs-transition:  0.22s cubic-bezier(0.4,0,0.2,1);
 }
-.case-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.09); }
-.case-card.featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1.1fr 0.9fr; }
-.case-visual {
-  height: 220px; display: flex; align-items: center; justify-content: center;
-  font-size: 3rem; position: relative; overflow: hidden;
+
+/* ── Section wrapper ── */
+.cs-section {
+  background: var(--cs-bg);
+  padding: 96px 0 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-inline: clamp(20px, 5vw, 60px);
 }
-.case-card.featured .case-visual { height: 100%; min-height: 260px; }
-.cv-blue { background: linear-gradient(135deg, #e8effe 0%, #c7d7fc 100%); }
-.cv-green { background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); }
-.cv-amber { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
-.case-body { padding: 32px; }
-.case-card.featured .case-body { display: flex; flex-direction: column; justify-content: center; padding: 40px; }
-.case-category {
-  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+
+/* ── Header ── */
+.cs-header {
+  margin-bottom: 52px;
 }
-.case-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.25rem; font-weight: 600; color: var(--ink);
-  line-height: 1.3; margin-bottom: 12px;
+
+.cs-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--cs-accent);
+  text-transform: uppercase;
+  margin-bottom: 12px;
 }
-.case-card.featured .case-title { font-size: 1.6rem; }
-.case-desc { font-size: 0.875rem; line-height: 1.7; color: var(--ink-soft); }
-.case-metrics { display: flex; gap: 28px; margin-top: 28px; }
-.metric-val {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem; font-weight: 700; color: var(--ink); display: block;
+
+.cs-title {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  color: var(--cs-text-primary);
+  line-height: 1.15;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
 }
-.case-card.featured .metric-val { font-size: 2rem; }
-.metric-label { font-size: 0.75rem; color: var(--ink-muted); margin-top: 2px; }
+
+.cs-subtitle {
+  font-size: 15px;
+  color: var(--cs-text-muted);
+  line-height: 1.6;
+  max-width: 460px;
+  margin: 0;
+}
+
+/* ── Shared card base ── */
+.cs-card {
+  background: var(--cs-bg);
+  border: 1px solid var(--cs-border);
+  border-radius: var(--cs-radius-card);
+  box-shadow: var(--cs-shadow);
+  overflow: hidden;
+  transition: box-shadow var(--cs-transition), transform var(--cs-transition);
+}
+
+.cs-card:hover {
+  box-shadow: var(--cs-shadow-hover);
+  transform: translateY(-3px);
+}
+
+/* ── Featured card (full-width) ── */
+.cs-card--featured {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  margin-bottom: 28px;
+  min-height: 260px;
+}
+
+.cs-card--featured .cs-card__visual {
+  background: linear-gradient(145deg, #eff6ff 0%, #dbeafe 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px 28px;
+}
+
+.cs-card--featured .cs-card__body {
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ── Icon wrap ── */
+.cs-card__icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.cs-card__icon-wrap--sm {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.cs-card__icon-wrap svg,
+.cs-card__icon-wrap--sm svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── Tags ── */
+.cs-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cs-tag {
+  font-size: 11px;
+  font-weight: 500;
+  background: rgba(255,255,255,0.7);
+  color: var(--cs-text-muted);
+  padding: 4px 9px;
+  border-radius: var(--cs-radius-tag);
+  border: 1px solid rgba(255,255,255,0.4);
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+}
+
+/* ── Card body text ── */
+.cs-card__domain {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--cs-accent);
+  letter-spacing: 0.02em;
+  margin: 0 0 6px;
+}
+
+.cs-card__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--cs-text-primary);
+  line-height: 1.25;
+  margin: 0 0 12px;
+  letter-spacing: -0.015em;
+}
+
+.cs-card__desc {
+  font-size: 14px;
+  color: var(--cs-text-muted);
+  line-height: 1.65;
+  margin: 0 0 24px;
+}
+
+/* ── Metrics ── */
+.cs-metrics {
+  display: flex;
+  gap: 40px;
+}
+
+.cs-metrics--row {
+  gap: 24px;
+}
+
+.cs-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cs-metric__value {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--cs-text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.cs-metric--secondary .cs-metric__value {
+  font-size: 24px;
+  color: var(--cs-accent);
+}
+
+.cs-metric__label {
+  font-size: 12px;
+  color: var(--cs-text-muted);
+  line-height: 1.4;
+}
+
+/* ── Grid layout for smaller cards ── */
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ── Grid card internals ── */
+.cs-card--grid {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cs-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cs-card__top .cs-card__tags {
+  justify-content: flex-end;
+}
+
+.cs-card--grid .cs-card__domain {
+  margin: 0;
+}
+
+.cs-card--grid .cs-card__title {
+  font-size: 16px;
+  margin: 0;
+}
+
+.cs-card--grid .cs-card__desc {
+  font-size: 13.5px;
+  margin: 0;
+  flex: 1;
+}
+
+.cs-card--grid .cs-metrics--row {
+  margin-top: auto;
+}
+
+.cs-card--grid .cs-metric__value {
+  font-size: 22px;
+}
+
+.cs-card--grid .cs-metric--secondary .cs-metric__value {
+  font-size: 18px;
+}
+
+/* ── Market badge ── */
+.cs-card[data-market]::before {
+  content: attr(data-market);
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: var(--cs-accent-light);
+  color: var(--cs-accent);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.cs-card--grid {
+  position: relative;
+}
+
+.cs-card--featured {
+  position: relative;
+}
+
+.cs-card--featured[data-market]::before {
+  top: 24px;
+  right: 24px;
+}
+
+/* ── Hover accent line ── */
+.cs-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cs-accent), #60a5fa);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--cs-transition);
+  border-radius: 0 0 var(--cs-radius-card) var(--cs-radius-card);
+}
+
+.cs-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .cs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .cs-section {
+    padding-block: 60px 48px;
+  }
+
+  .cs-card--featured {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-card--featured .cs-card__visual {
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 24px;
+    gap: 16px;
+  }
+
+  .cs-card--featured .cs-card__body {
+    padding: 24px;
+  }
+
+  .cs-metrics {
+    gap: 28px;
+  }
+}
+
+@media (max-width: 580px) {
+  .cs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-metrics {
+    gap: 20px;
+  }
+
+  .cs-card--featured .cs-card__visual {
+    flex-wrap: wrap;
+  }
+}
 
 /* ── TOOL MOCKUP ── */
 #tool { background: var(--white); }
