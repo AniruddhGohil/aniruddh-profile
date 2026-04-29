@@ -244,71 +244,272 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div class="divider"></div>
 
-<!-- CASE STUDIES -->
-<section id="cases">
-  <div class="section-header reveal">
-    <span class="section-label">Results</span>
-    <h2>Case Studies</h2>
-    <p class="section-intro">Real outcomes from strategic SEO work across e-commerce brands in the ANZ market.</p>
-  </div>
-  <div class="cases-grid">
-    <div class="case-card featured reveal">
-      <div class="case-visual cv-blue">📦</div>
-      <div class="case-body">
-        <div class="case-category">E-commerce · Shopify · Australia</div>
-        <div class="case-title">Scaling Organic Revenue for a Leading ANZ Retailer</div>
-        <p class="case-desc">Complete technical overhaul and category architecture redesign for a mid-market e-commerce brand. Solved crawl inefficiencies, rebuilt internal linking, and launched a data-backed content strategy targeting high-intent queries.</p>
-        <div class="case-metrics">
-          <div>
-            <span class="metric-val">+187%</span>
-            <div class="metric-label">Organic Revenue (12 months)</div>
-          </div>
-          <div>
-            <span class="metric-val">+3.2×</span>
-            <div class="metric-label">Organic Sessions</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="case-card reveal reveal-delay-1">
-      <div class="case-visual cv-green">🏪</div>
-      <div class="case-body">
-        <div class="case-category">Technical SEO · BigCommerce</div>
-        <div class="case-title">Crawl Budget Recovery for Large Catalogue</div>
-        <p class="case-desc">Identified and resolved critical crawl waste across 40k+ URLs using log file analysis and Python automation, recovering 60% of crawl budget for revenue-driving pages.</p>
-        <div class="case-metrics">
-          <div>
-            <span class="metric-val">+60%</span>
-            <div class="metric-label">Crawl Budget Recovered</div>
-          </div>
-          <div>
-            <span class="metric-val">−34%</span>
-            <div class="metric-label">Indexed Thin Pages</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="case-card reveal reveal-delay-2">
-      <div class="case-visual cv-amber">🔎</div>
-      <div class="case-body">
-        <div class="case-category">Content Strategy · NZ Market</div>
-        <div class="case-title">Compounding Content Engine for NZ Brand</div>
-        <p class="case-desc">Built a systematic content production and optimisation workflow using Python-powered keyword clustering and search intent mapping, generating compounding organic growth.</p>
-        <div class="case-metrics">
-          <div>
-            <span class="metric-val">+220%</span>
-            <div class="metric-label">Keyword Visibility</div>
-          </div>
-          <div>
-            <span class="metric-val">×4.5</span>
-            <div class="metric-label">Content Output Efficiency</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ============================================================
+     CASE STUDIES SECTION
+     Drop this inside your <main> or wherever the section lives.
+     Requires: case-studies.css linked in <head>
+     ============================================================ -->
 
+<section id="case-studies" class="cs-section">
+
+  <!-- Section header -->
+  <div class="cs-header">
+    <span class="cs-eyebrow">RESULTS</span>
+    <h2 class="cs-title">Case Studies</h2>
+    <p class="cs-subtitle">
+      Real outcomes from strategic SEO work across eCommerce brands in the ANZ &amp; UAE market.
+    </p>
+  </div>
+
+  <!-- ── FEATURED card (full-width) ── -->
+  <article class="cs-card cs-card--featured" data-market="ANZ">
+    <div class="cs-card__visual">
+      <div class="cs-card__icon-wrap">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <rect width="48" height="48" rx="12" fill="url(#grad-rugs)"/>
+          <path d="M14 34 L24 14 L34 34" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M17.5 27h13" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="grad-rugs" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#4F8EF7"/>
+              <stop offset="1" stop-color="#2563EB"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="cs-card__tags">
+        <span class="cs-tag">eCommerce SEO</span>
+        <span class="cs-tag">Revenue Growth</span>
+        <span class="cs-tag">ANZ Market</span>
+      </div>
+    </div>
+
+    <div class="cs-card__body">
+      <p class="cs-card__domain">rugsdirect.com.au</p>
+      <h3 class="cs-card__title">Scaling Organic Revenue for a Leading ANZ Retailer</h3>
+      <p class="cs-card__desc">
+        Complete technical overhaul and category architecture redesign for a mid-market
+        eCommerce brand. Scaled crawl efficiencies, rebuilt internal linking, and launched
+        a data-backed content strategy targeting high-intent queries.
+      </p>
+      <div class="cs-metrics">
+        <div class="cs-metric">
+          <span class="cs-metric__value">+238%</span>
+          <span class="cs-metric__label">Organic Revenue<br>(AUD 8K → 27K/mo)</span>
+        </div>
+        <div class="cs-metric cs-metric--secondary">
+          <span class="cs-metric__value">~3.2×</span>
+          <span class="cs-metric__label">Traffic Multiplier</span>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ── Grid of smaller cards ── -->
+  <div class="cs-grid">
+
+    <!-- Card 2 -->
+    <article class="cs-card cs-card--grid" data-market="UAE">
+      <div class="cs-card__top">
+        <div class="cs-card__icon-wrap cs-card__icon-wrap--sm">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <rect width="40" height="40" rx="10" fill="url(#grad-rivoli)"/>
+            <circle cx="20" cy="20" r="8" stroke="#fff" stroke-width="2.2"/>
+            <path d="M20 12v2M20 26v2M12 20h2M26 20h2" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="grad-rivoli" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#A78BFA"/>
+                <stop offset="1" stop-color="#7C3AED"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="cs-card__tags">
+          <span class="cs-tag">Luxury Retail</span>
+          <span class="cs-tag">Multilingual SEO</span>
+          <span class="cs-tag">UAE</span>
+        </div>
+      </div>
+      <p class="cs-card__domain">rivolishop.com</p>
+      <h3 class="cs-card__title">Luxury Retail SEO &amp; AI Search Presence</h3>
+      <p class="cs-card__desc">
+        Technical SEO, hreflang architecture, and structured data across 1,000+ SKUs.
+        English–Arabic multilingual optimisation and zero-click AI search targeting.
+      </p>
+      <div class="cs-metrics cs-metrics--row">
+        <div class="cs-metric">
+          <span class="cs-metric__value">+30%</span>
+          <span class="cs-metric__label">Organic Traffic</span>
+        </div>
+        <div class="cs-metric cs-metric--secondary">
+          <span class="cs-metric__value">1K+</span>
+          <span class="cs-metric__label">SKUs Structured</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="cs-card cs-card--grid" data-market="UAE">
+      <div class="cs-card__top">
+        <div class="cs-card__icon-wrap cs-card__icon-wrap--sm">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <rect width="40" height="40" rx="10" fill="url(#grad-clarks)"/>
+            <path d="M10 28 Q20 14 30 28" stroke="#fff" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+            <path d="M14 24h12" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="grad-clarks" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#34D399"/>
+                <stop offset="1" stop-color="#059669"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="cs-card__tags">
+          <span class="cs-tag">eCommerce SEO</span>
+          <span class="cs-tag">Local SEO</span>
+          <span class="cs-tag">UAE</span>
+        </div>
+      </div>
+      <p class="cs-card__domain">clarksstores.ae</p>
+      <h3 class="cs-card__title">Compounding Revenue Engine for UAE Retail</h3>
+      <p class="cs-card__desc">
+        Full-funnel SEO strategy combined with GMB optimisation across multiple locations,
+        driving consistent high-value organic revenue month over month.
+      </p>
+      <div class="cs-metrics cs-metrics--row">
+        <div class="cs-metric">
+          <span class="cs-metric__value">AED 40K</span>
+          <span class="cs-metric__label">Monthly Revenue</span>
+        </div>
+        <div class="cs-metric cs-metric--secondary">
+          <span class="cs-metric__value">Multi</span>
+          <span class="cs-metric__label">GMB Profiles</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="cs-card cs-card--grid" data-market="ANZ">
+      <div class="cs-card__top">
+        <div class="cs-card__icon-wrap cs-card__icon-wrap--sm">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <rect width="40" height="40" rx="10" fill="url(#grad-cheap)"/>
+            <rect x="11" y="18" width="6" height="10" rx="2" fill="#fff" opacity=".9"/>
+            <rect x="21" y="13" width="6" height="15" rx="2" fill="#fff"/>
+            <defs>
+              <linearGradient id="grad-cheap" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FB923C"/>
+                <stop offset="1" stop-color="#EA580C"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="cs-card__tags">
+          <span class="cs-tag">AI SEO</span>
+          <span class="cs-tag">GEO</span>
+          <span class="cs-tag">ANZ</span>
+        </div>
+      </div>
+      <p class="cs-card__domain">cheapestrugsonline.com.au</p>
+      <h3 class="cs-card__title">Crawl Budget Recovery for Large Catalogue</h3>
+      <p class="cs-card__desc">
+        Implemented Generative SEO and entity SEO for home décor categories. GPT-based
+        automation for product SEO with structured data playbook across all listings.
+      </p>
+      <div class="cs-metrics cs-metrics--row">
+        <div class="cs-metric">
+          <span class="cs-metric__value">+15%</span>
+          <span class="cs-metric__label">Impressions</span>
+        </div>
+        <div class="cs-metric cs-metric--secondary">
+          <span class="cs-metric__value">AI Search</span>
+          <span class="cs-metric__label">Visibility</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 5 -->
+    <article class="cs-card cs-card--grid" data-market="ANZ">
+      <div class="cs-card__top">
+        <div class="cs-card__icon-wrap cs-card__icon-wrap--sm">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <rect width="40" height="40" rx="10" fill="url(#grad-opti)"/>
+            <path d="M13 27 C13 20 20 14 27 20 C20 20 20 27 27 27" stroke="#fff" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+            <defs>
+              <linearGradient id="grad-opti" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#38BDF8"/>
+                <stop offset="1" stop-color="#0284C7"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="cs-card__tags">
+          <span class="cs-tag">Python SEO</span>
+          <span class="cs-tag">Automation</span>
+          <span class="cs-tag">ANZ + NZ</span>
+        </div>
+      </div>
+      <p class="cs-card__domain">optislim.com.au &amp; optislim.co.nz</p>
+      <h3 class="cs-card__title">AI-Powered Keyword Clustering &amp; Content Engine</h3>
+      <p class="cs-card__desc">
+        Built a Python-based keyword clustering system, Reddit &amp; Quora intent mining,
+        structured data (FAQ, product, review schema), and AI-assisted content production.
+      </p>
+      <div class="cs-metrics cs-metrics--row">
+        <div class="cs-metric">
+          <span class="cs-metric__value">+20%</span>
+          <span class="cs-metric__label">Organic Visibility</span>
+        </div>
+        <div class="cs-metric cs-metric--secondary">
+          <span class="cs-metric__value">AI Rich</span>
+          <span class="cs-metric__label">Results Active</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 6 -->
+    <article class="cs-card cs-card--grid" data-market="UAE">
+      <div class="cs-card__top">
+        <div class="cs-card__icon-wrap cs-card__icon-wrap--sm">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <rect width="40" height="40" rx="10" fill="url(#grad-rasa)"/>
+            <path d="M20 12 L22 18 L28 18 L23 22 L25 28 L20 24 L15 28 L17 22 L12 18 L18 18 Z" fill="#fff" opacity=".9"/>
+            <defs>
+              <linearGradient id="grad-rasa" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#F472B6"/>
+                <stop offset="1" stop-color="#BE185D"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="cs-card__tags">
+          <span class="cs-tag">Entity SEO</span>
+          <span class="cs-tag">AI Content</span>
+          <span class="cs-tag">UAE</span>
+        </div>
+      </div>
+      <p class="cs-card__domain">rasasistore.com</p>
+      <h3 class="cs-card__title">Rapid Organic Growth for Fragrance Brand</h3>
+      <p class="cs-card__desc">
+        AI-driven content production, entity SEO for luxury fragrance categories, and
+        structured data expansion — all executed within a 3-month engagement.
+      </p>
+      <div class="cs-metrics cs-metrics--row">
+        <div class="cs-metric">
+          <span class="cs-metric__value">+20%</span>
+          <span class="cs-metric__label">Organic Growth</span>
+        </div>
+        <div class="cs-metric cs-metric--secondary">
+          <span class="cs-metric__value">3 months</span>
+          <span class="cs-metric__label">Time to Results</span>
+        </div>
+      </div>
+    </article>
+
+  </div><!-- /.cs-grid -->
+
+</section>
+  
 <div class="divider"></div>
 
 <!-- PROCESS -->
