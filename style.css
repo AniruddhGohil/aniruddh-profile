@@ -226,41 +226,51 @@ h2 {
 }
 
 /* ============================================================
-   CASE STUDIES SECTION — case-studies.css
-   Matches the clean, minimal aesthetic of aniruddh-gohil's
-   existing portfolio site (white bg, dark text, blue accents).
+   CASE STUDIES SECTION — case-studies.css  (v2 — wider layout)
    ============================================================ */
 
-/* ── Variables (extend your existing ones if you have them) ── */
 :root {
-  --cs-bg:          #ffffff;
-  --cs-bg-subtle:   #f8f9fc;
-  --cs-border:      #e5e7eb;
-  --cs-text-primary:#0f172a;
-  --cs-text-muted:  #64748b;
-  --cs-accent:      #2563eb;
-  --cs-accent-light:#eff6ff;
-  --cs-tag-bg:      #f1f5f9;
-  --cs-tag-text:    #475569;
-  --cs-radius-card: 16px;
-  --cs-radius-tag:  6px;
-  --cs-shadow:      0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.06);
-  --cs-shadow-hover:0 4px 8px rgba(0,0,0,.08), 0 12px 32px rgba(37,99,235,.12);
-  --cs-transition:  0.22s cubic-bezier(0.4,0,0.2,1);
+  --cs-bg:           #ffffff;
+  --cs-bg-subtle:    #f8f9fc;
+  --cs-border:       #e5e7eb;
+  --cs-text-primary: #0f172a;
+  --cs-text-muted:   #64748b;
+  --cs-accent:       #2563eb;
+  --cs-accent-light: #eff6ff;
+  --cs-radius-card:  16px;
+  --cs-radius-tag:   6px;
+  --cs-shadow:       0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.06);
+  --cs-shadow-hover: 0 4px 8px rgba(0,0,0,.08), 0 12px 32px rgba(37,99,235,.12);
+  --cs-transition:   0.22s cubic-bezier(0.4,0,0.2,1);
 }
 
-/* ── Section wrapper ── */
+/* ── Section: full-width breakout from parent container ── */
 .cs-section {
+  /* Break out of any parent max-width */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
   background: var(--cs-bg);
-  padding: 96px 0 80px;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding-inline: clamp(20px, 5vw, 60px);
+  padding: 96px 0 88px;
+}
+
+/* Inner wrapper constrains content to 1200px */
+.cs-section > * {
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-inline: clamp(24px, 5vw, 72px);
+  box-sizing: border-box;
 }
 
 /* ── Header ── */
 .cs-header {
-  margin-bottom: 52px;
+  margin-bottom: 48px;
 }
 
 .cs-eyebrow {
@@ -270,23 +280,23 @@ h2 {
   letter-spacing: 0.1em;
   color: var(--cs-accent);
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .cs-title {
-  font-size: clamp(28px, 4vw, 40px);
+  font-size: clamp(28px, 3.5vw, 42px);
   font-weight: 700;
   color: var(--cs-text-primary);
   line-height: 1.15;
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   letter-spacing: -0.02em;
 }
 
 .cs-subtitle {
   font-size: 15px;
   color: var(--cs-text-muted);
-  line-height: 1.6;
-  max-width: 460px;
+  line-height: 1.65;
+  max-width: 500px;
   margin: 0;
 }
 
@@ -305,12 +315,13 @@ h2 {
   transform: translateY(-3px);
 }
 
-/* ── Featured card (full-width) ── */
+/* ── Featured card ── */
 .cs-card--featured {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  margin-bottom: 28px;
-  min-height: 260px;
+  grid-template-columns: 320px 1fr;
+  margin-bottom: 24px;
+  min-height: 300px;
+  position: relative;
 }
 
 .cs-card--featured .cs-card__visual {
@@ -318,11 +329,11 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 32px 28px;
+  padding: 40px 36px;
 }
 
 .cs-card--featured .cs-card__body {
-  padding: 36px 40px;
+  padding: 44px 52px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -330,16 +341,16 @@ h2 {
 
 /* ── Icon wrap ── */
 .cs-card__icon-wrap {
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   border-radius: 14px;
   overflow: hidden;
   flex-shrink: 0;
 }
 
 .cs-card__icon-wrap--sm {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 10px;
 }
 
@@ -360,11 +371,11 @@ h2 {
 .cs-tag {
   font-size: 11px;
   font-weight: 500;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.75);
   color: var(--cs-text-muted);
-  padding: 4px 9px;
+  padding: 4px 10px;
   border-radius: var(--cs-radius-tag);
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.5);
   white-space: nowrap;
   backdrop-filter: blur(4px);
 }
@@ -372,54 +383,56 @@ h2 {
 /* ── Card body text ── */
 .cs-card__domain {
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--cs-accent);
-  letter-spacing: 0.02em;
-  margin: 0 0 6px;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px;
+  text-transform: lowercase;
 }
 
 .cs-card__title {
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 700;
   color: var(--cs-text-primary);
   line-height: 1.25;
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   letter-spacing: -0.015em;
 }
 
 .cs-card__desc {
   font-size: 14px;
   color: var(--cs-text-muted);
-  line-height: 1.65;
-  margin: 0 0 24px;
+  line-height: 1.7;
+  margin: 0 0 28px;
 }
 
 /* ── Metrics ── */
 .cs-metrics {
   display: flex;
-  gap: 40px;
+  gap: 48px;
+  align-items: flex-end;
 }
 
 .cs-metrics--row {
-  gap: 24px;
+  gap: 28px;
 }
 
 .cs-metric {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
 }
 
 .cs-metric__value {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 800;
   color: var(--cs-text-primary);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
   line-height: 1;
 }
 
 .cs-metric--secondary .cs-metric__value {
-  font-size: 24px;
+  font-size: 26px;
   color: var(--cs-accent);
 }
 
@@ -429,58 +442,40 @@ h2 {
   line-height: 1.4;
 }
 
-/* ── Grid layout for smaller cards ── */
+/* ── Grid: 3 columns ── */
 .cs-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 22px;
 }
 
-/* ── Grid card internals ── */
+/* ── Grid cards ── */
 .cs-card--grid {
-  padding: 28px;
+  padding: 32px 28px;
   display: flex;
   flex-direction: column;
   gap: 14px;
+  position: relative;
 }
 
 .cs-card__top {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
 }
 
 .cs-card__top .cs-card__tags {
   justify-content: flex-end;
 }
 
-.cs-card--grid .cs-card__domain {
-  margin: 0;
-}
+.cs-card--grid .cs-card__domain { margin: 0; }
+.cs-card--grid .cs-card__title  { font-size: 16px; margin: 0; }
+.cs-card--grid .cs-card__desc   { font-size: 13.5px; margin: 0; flex: 1; }
+.cs-card--grid .cs-metrics--row { margin-top: auto; }
 
-.cs-card--grid .cs-card__title {
-  font-size: 16px;
-  margin: 0;
-}
-
-.cs-card--grid .cs-card__desc {
-  font-size: 13.5px;
-  margin: 0;
-  flex: 1;
-}
-
-.cs-card--grid .cs-metrics--row {
-  margin-top: auto;
-}
-
-.cs-card--grid .cs-metric__value {
-  font-size: 22px;
-}
-
-.cs-card--grid .cs-metric--secondary .cs-metric__value {
-  font-size: 18px;
-}
+.cs-card--grid .cs-metric__value                       { font-size: 24px; }
+.cs-card--grid .cs-metric--secondary .cs-metric__value { font-size: 20px; }
 
 /* ── Market badge ── */
 .cs-card[data-market]::before {
@@ -497,20 +492,12 @@ h2 {
   border-radius: 4px;
 }
 
-.cs-card--grid {
-  position: relative;
-}
-
-.cs-card--featured {
-  position: relative;
-}
-
 .cs-card--featured[data-market]::before {
-  top: 24px;
-  right: 24px;
+  top: 20px;
+  right: 20px;
 }
 
-/* ── Hover accent line ── */
+/* ── Hover accent bar ── */
 .cs-card::after {
   content: '';
   position: absolute;
@@ -525,12 +512,16 @@ h2 {
   border-radius: 0 0 var(--cs-radius-card) var(--cs-radius-card);
 }
 
-.cs-card:hover::after {
-  transform: scaleX(1);
-}
+.cs-card:hover::after { transform: scaleX(1); }
 
 /* ── Responsive ── */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
+  .cs-card--featured {
+    grid-template-columns: 260px 1fr;
+  }
+  .cs-card--featured .cs-card__body {
+    padding: 36px 40px;
+  }
   .cs-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -538,41 +529,29 @@ h2 {
 
 @media (max-width: 768px) {
   .cs-section {
-    padding-block: 60px 48px;
+    padding-block: 64px 52px;
   }
-
   .cs-card--featured {
     grid-template-columns: 1fr;
+    min-height: unset;
   }
-
   .cs-card--featured .cs-card__visual {
     flex-direction: row;
     align-items: center;
-    padding: 20px 24px;
+    padding: 24px 28px;
     gap: 16px;
   }
-
   .cs-card--featured .cs-card__body {
-    padding: 24px;
+    padding: 28px 32px;
   }
-
-  .cs-metrics {
-    gap: 28px;
-  }
+  .cs-metrics { gap: 32px; }
 }
 
 @media (max-width: 580px) {
-  .cs-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cs-metrics {
-    gap: 20px;
-  }
-
-  .cs-card--featured .cs-card__visual {
-    flex-wrap: wrap;
-  }
+  .cs-grid { grid-template-columns: 1fr; }
+  .cs-metrics { gap: 20px; }
+  .cs-card--featured .cs-card__visual { flex-wrap: wrap; }
+  .cs-metric__value { font-size: 26px; }
 }
 
 /* ── TOOL MOCKUP ── */
