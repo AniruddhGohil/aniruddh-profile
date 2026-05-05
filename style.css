@@ -245,24 +245,10 @@ h2 {
   --cs-ease:         0.26s cubic-bezier(0.4,0,0.2,1);
 }
 
-/* ── Section: full-bleed ── */
+/* ── Section ── */
 .cs-section {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
   background: var(--cs-bg);
-  padding: 96px 0 88px;
-}
-
-.cs-section > * {
-  max-width: 1100px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-inline: clamp(20px, 5vw, 64px);
-  box-sizing: border-box;
+  padding: 96px 60px 88px;
 }
 
 /* ── Header ── */
@@ -526,12 +512,13 @@ h2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  margin-top: 20px;
 }
 
 .cs-grid .cs-card {
   margin-bottom: 0;
-  grid-template-columns: 180px 1fr;
-  min-height: 260px;
+  grid-template-columns: 150px 1fr;
+  min-height: 240px;
 }
 
 .cs-card__top {
@@ -542,17 +529,27 @@ h2 {
 }
 
 .cs-grid .cs-card__visual {
-  padding: 28px 24px;
+  padding: 22px 18px;
 }
 
 .cs-grid .cs-card__body {
-  padding: 28px 28px 22px 24px;
+  padding: 22px 22px 18px 18px;
 }
 
 .cs-grid .cs-card__title {
-  font-size: 17px;
-  padding-right: 44px;
+  font-size: 15px;
+  padding-right: 40px;
+  margin-bottom: 8px;
 }
+
+.cs-grid .cs-card__desc {
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.cs-grid .cs-metric__value { font-size: 24px; }
+.cs-grid .cs-metric__value--accent { font-size: 26px; }
+.cs-grid .cs-metric__value--secondary { font-size: 20px; }
 
 /* ── Empty state ── */
 .cs-empty {
@@ -566,24 +563,27 @@ h2 {
 
 /* Tablet */
 @media (max-width: 900px) {
+  .cs-section { padding: 72px 24px 64px; }
+
   .cs-card {
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 180px 1fr;
   }
-  .cs-card__visual { padding: 28px 24px; }
-  .cs-card__body { padding: 28px 28px 22px 24px; }
-  .cs-card__title { font-size: 17px; }
+  .cs-card__visual { padding: 24px 20px; }
+  .cs-card__body { padding: 24px 24px 20px 20px; }
+  .cs-card__title { font-size: 16px; }
 
   .cs-grid {
     grid-template-columns: 1fr;
   }
   .cs-grid .cs-card {
-    grid-template-columns: 160px 1fr;
+    grid-template-columns: 140px 1fr;
+    min-height: unset;
   }
 }
 
 /* Mobile */
 @media (max-width: 600px) {
-  .cs-section { padding-block: 56px 48px; }
+  .cs-section { padding: 56px 20px 48px; }
 
   /* Stack cards vertically */
   .cs-card,
