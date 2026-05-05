@@ -83,7 +83,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
     </div>
     <div class="hero-actions">
-      <a href="#cases" class="btn-primary">View Case Studies</a>
+      <a href="#case-studies" class="btn-primary">View Case Studies</a>
       <a href="#profiles" class="btn-secondary">Get in Touch</a>
     </div>
   </div>
@@ -245,11 +245,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="divider"></div>
 
 <!-- ============================================================
-     CASE STUDIES SECTION
-     Drop this inside your <main> or wherever the section lives.
-     Requires: case-studies.css linked in <head>
+     CASE STUDIES SECTION — upgraded
      ============================================================ -->
-
 <section id="case-studies" class="cs-section">
 
   <!-- Section header -->
@@ -259,10 +256,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <p class="cs-subtitle">
       Real outcomes from strategic SEO work across eCommerce brands in the ANZ &amp; UAE market.
     </p>
+
+    <!-- ── Filter tabs ── -->
+    <div class="cs-filters" role="tablist" aria-label="Filter case studies">
+      <button class="cs-filter cs-filter--active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button class="cs-filter" data-filter="ANZ" role="tab" aria-selected="false">ANZ Market</button>
+      <button class="cs-filter" data-filter="UAE" role="tab" aria-selected="false">UAE Market</button>
+      <button class="cs-filter" data-filter="ai" role="tab" aria-selected="false">AI SEO</button>
+    </div>
   </div>
 
   <!-- ── FEATURED card (full-width) ── -->
-  <article class="cs-card cs-card--featured" data-market="ANZ">
+  <article class="cs-card cs-card--featured" data-market="ANZ" data-tags="ANZ">
     <div class="cs-card__visual">
       <div class="cs-card__icon-wrap">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -294,14 +299,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </p>
       <div class="cs-metrics">
         <div class="cs-metric">
-          <span class="cs-metric__value">+238%</span>
+          <span class="cs-metric__value cs-metric__value--accent">+238%</span>
           <span class="cs-metric__label">Organic Revenue<br>(AUD 8K → 27K/mo)</span>
         </div>
-        <div class="cs-metric cs-metric--secondary">
-          <span class="cs-metric__value">~3.2×</span>
+        <div class="cs-metric">
+          <span class="cs-metric__value cs-metric__value--secondary">~3.2×</span>
           <span class="cs-metric__label">Traffic Multiplier</span>
         </div>
       </div>
+      <a href="https://wa.me/+919833993229" class="cs-cta" aria-label="Discuss this case study">Discuss this case →</a>
     </div>
   </article>
 
@@ -309,7 +315,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="cs-grid">
 
     <!-- Card 2 -->
-    <article class="cs-card cs-card--grid" data-market="UAE">
+    <article class="cs-card cs-card--grid" data-market="UAE" data-tags="UAE">
       <div class="cs-card__top">
         <div class="cs-card__icon-wrap cs-card__icon-wrap--sm">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" aria-hidden="true">
@@ -338,18 +344,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </p>
       <div class="cs-metrics cs-metrics--row">
         <div class="cs-metric">
-          <span class="cs-metric__value">+30%</span>
+          <span class="cs-metric__value cs-metric__value--accent">+30%</span>
           <span class="cs-metric__label">Organic Traffic</span>
         </div>
-        <div class="cs-metric cs-metric--secondary">
-          <span class="cs-metric__value">1K+</span>
+        <div class="cs-metric">
+          <span class="cs-metric__value cs-metric__value--secondary">1K+</span>
           <span class="cs-metric__label">SKUs Structured</span>
         </div>
       </div>
+      <a href="https://wa.me/+919833993229" class="cs-cta" aria-label="Discuss this case study">Discuss this case →</a>
     </article>
 
     <!-- Card 3 -->
-    <article class="cs-card cs-card--grid" data-market="UAE">
+    <article class="cs-card cs-card--grid" data-market="UAE" data-tags="UAE">
       <div class="cs-card__top">
         <div class="cs-card__icon-wrap cs-card__icon-wrap--sm">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" aria-hidden="true">
@@ -378,18 +385,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </p>
       <div class="cs-metrics cs-metrics--row">
         <div class="cs-metric">
-          <span class="cs-metric__value">AED 40K</span>
+          <span class="cs-metric__value cs-metric__value--accent">AED 40K</span>
           <span class="cs-metric__label">Monthly Revenue</span>
         </div>
-        <div class="cs-metric cs-metric--secondary">
-          <span class="cs-metric__value">Multi</span>
+        <div class="cs-metric">
+          <span class="cs-metric__value cs-metric__value--secondary">Multi</span>
           <span class="cs-metric__label">GMB Profiles</span>
         </div>
       </div>
+      <a href="https://wa.me/+919833993229" class="cs-cta" aria-label="Discuss this case study">Discuss this case →</a>
     </article>
 
     <!-- Card 4 -->
-    <article class="cs-card cs-card--grid" data-market="ANZ">
+    <article class="cs-card cs-card--grid" data-market="ANZ" data-tags="ANZ ai">
       <div class="cs-card__top">
         <div class="cs-card__icon-wrap cs-card__icon-wrap--sm">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" aria-hidden="true">
@@ -418,18 +426,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </p>
       <div class="cs-metrics cs-metrics--row">
         <div class="cs-metric">
-          <span class="cs-metric__value">+15%</span>
+          <span class="cs-metric__value cs-metric__value--accent">+15%</span>
           <span class="cs-metric__label">Impressions</span>
         </div>
-        <div class="cs-metric cs-metric--secondary">
-          <span class="cs-metric__value">AI Search</span>
+        <div class="cs-metric">
+          <span class="cs-metric__value cs-metric__value--secondary">AI Search</span>
           <span class="cs-metric__label">Visibility</span>
         </div>
       </div>
+      <a href="https://wa.me/+919833993229" class="cs-cta" aria-label="Discuss this case study">Discuss this case →</a>
     </article>
 
     <!-- Card 5 -->
-    <article class="cs-card cs-card--grid" data-market="ANZ">
+    <article class="cs-card cs-card--grid" data-market="ANZ" data-tags="ANZ ai">
       <div class="cs-card__top">
         <div class="cs-card__icon-wrap cs-card__icon-wrap--sm">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" aria-hidden="true">
@@ -457,18 +466,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </p>
       <div class="cs-metrics cs-metrics--row">
         <div class="cs-metric">
-          <span class="cs-metric__value">+20%</span>
+          <span class="cs-metric__value cs-metric__value--accent">+20%</span>
           <span class="cs-metric__label">Organic Visibility</span>
         </div>
-        <div class="cs-metric cs-metric--secondary">
-          <span class="cs-metric__value">AI Rich</span>
+        <div class="cs-metric">
+          <span class="cs-metric__value cs-metric__value--secondary">AI Rich</span>
           <span class="cs-metric__label">Results Active</span>
         </div>
       </div>
+      <a href="https://wa.me/+919833993229" class="cs-cta" aria-label="Discuss this case study">Discuss this case →</a>
     </article>
 
     <!-- Card 6 -->
-    <article class="cs-card cs-card--grid" data-market="UAE">
+    <article class="cs-card cs-card--grid" data-market="UAE" data-tags="UAE ai">
       <div class="cs-card__top">
         <div class="cs-card__icon-wrap cs-card__icon-wrap--sm">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" aria-hidden="true">
@@ -496,20 +506,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </p>
       <div class="cs-metrics cs-metrics--row">
         <div class="cs-metric">
-          <span class="cs-metric__value">+20%</span>
+          <span class="cs-metric__value cs-metric__value--accent">+20%</span>
           <span class="cs-metric__label">Organic Growth</span>
         </div>
-        <div class="cs-metric cs-metric--secondary">
-          <span class="cs-metric__value">3 months</span>
+        <div class="cs-metric">
+          <span class="cs-metric__value cs-metric__value--secondary">3 months</span>
           <span class="cs-metric__label">Time to Results</span>
         </div>
       </div>
+      <a href="https://wa.me/+919833993229" class="cs-cta" aria-label="Discuss this case study">Discuss this case →</a>
     </article>
 
   </div><!-- /.cs-grid -->
 
+  <!-- Empty state (shown when no filter match) -->
+  <p class="cs-empty" aria-live="polite" hidden>No case studies match this filter.</p>
+
 </section>
-  
+
 <div class="divider"></div>
 
 <!-- PROCESS -->
@@ -620,6 +634,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <li>${item.dataset.pointB}</li>
         <li>${item.dataset.pointC}</li>
       `;
+    });
+  });
+
+  // ── Case Studies filter ──
+  const filterBtns = document.querySelectorAll('.cs-filter');
+  const featuredCard = document.querySelector('.cs-card--featured');
+  const gridCards = document.querySelectorAll('.cs-card--grid');
+  const emptyState = document.querySelector('.cs-empty');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+
+      // Update active state + aria
+      filterBtns.forEach(b => {
+        b.classList.remove('cs-filter--active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('cs-filter--active');
+      btn.setAttribute('aria-selected', 'true');
+
+      // Filter featured card
+      const featuredTags = featuredCard.dataset.tags || '';
+      if (filter === 'all' || featuredTags.includes(filter)) {
+        featuredCard.style.display = '';
+        featuredCard.classList.remove('cs-card--hidden');
+      } else {
+        featuredCard.style.display = 'none';
+        featuredCard.classList.add('cs-card--hidden');
+      }
+
+      // Filter grid cards
+      let visibleCount = 0;
+      gridCards.forEach(card => {
+        const tags = card.dataset.tags || '';
+        const match = filter === 'all' || tags.includes(filter);
+        card.style.display = match ? '' : 'none';
+        if (match) visibleCount++;
+      });
+
+      // Empty state
+      const featuredVisible = filter === 'all' || (featuredCard.dataset.tags || '').includes(filter);
+      emptyState.hidden = featuredVisible || visibleCount > 0;
     });
   });
 </script>
