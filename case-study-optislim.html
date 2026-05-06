@@ -217,14 +217,6 @@ engine for your brand?</h2>
   <span class="footer-copy">© 2026 · SEO & eCommerce Growth Specialist</span>
 </footer>
 
-<script>
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
-</script>
+<script src="case-study.js" defer></script>
 </body>
 </html>
