@@ -30,18 +30,47 @@
     reveals.forEach(function (el) { revealObserver.observe(el); });
   }
 
-  /* ── Portfolio dropdown (analytics.html parent page only) ── */
+  /* ── Portfolio dropdown — hover triggered ── */
   var portfolioToggle = document.getElementById('portfolioToggle');
   var portfolioMenu = document.getElementById('portfolioMenu');
+  var portfolioWrap = portfolioToggle ? portfolioToggle.closest('.nav-dropdown') : null;
 
-  if (portfolioToggle && portfolioMenu) {
+  if (portfolioWrap && portfolioMenu) {
+    var closeTimer;
+
+    portfolioWrap.addEventListener('mouseenter', function () {
+      clearTimeout(closeTimer);
+      portfolioMenu.classList.add('open');
+      portfolioToggle.classList.add('open');
+    });
+
+    portfolioWrap.addEventListener('mouseleave', function () {
+      closeTimer = setTimeout(function () {
+        portfolioMenu.classList.remove('open');
+        portfolioToggle.classList.remove('open');
+      }, 180);
+    });
+
+    portfolioMenu.addEventListener('mouseenter', function () {
+      clearTimeout(closeTimer);
+    });
+
+    portfolioMenu.addEventListener('mouseleave', function () {
+      closeTimer = setTimeout(function () {
+        portfolioMenu.classList.remove('open');
+        portfolioToggle.classList.remove('open');
+      }, 180);
+    });
+
+    /* Keep click working for keyboard/touch users */
     portfolioToggle.addEventListener('click', function (e) {
       e.stopPropagation();
       var isOpen = portfolioMenu.classList.toggle('open');
       portfolioToggle.classList.toggle('open', isOpen);
     });
+
     document.addEventListener('click', function (e) {
-      if (!portfolioToggle.contains(e.target) && !portfolioMenu.contains(e.target)) {
+      if (!portfolioWrap.contains(e.target)) {
         portfolioMenu.classList.remove('open');
         portfolioToggle.classList.remove('open');
       }
