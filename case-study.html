@@ -596,37 +596,6 @@
   <span class="footer-copy">© 2026 · SEO & eCommerce Growth Specialist</span>
 </footer>
 
-<script>
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
-
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  reveals.forEach(el => observer.observe(el));
-
-  // Filter
-  const filterBtns = document.querySelectorAll('.cs-filter');
-  const featured = document.querySelector('.cs-featured');
-  const cards = document.querySelectorAll('.cs-grid .cs-card');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const f = btn.dataset.filter;
-      filterBtns.forEach(b => { b.classList.remove('cs-filter--active'); b.setAttribute('aria-selected','false'); });
-      btn.classList.add('cs-filter--active'); btn.setAttribute('aria-selected','true');
-
-      const ftags = featured.dataset.tags || '';
-      featured.style.display = (f === 'all' || ftags.includes(f)) ? '' : 'none';
-
-      cards.forEach(card => {
-        const tags = card.dataset.tags || '';
-        card.style.display = (f === 'all' || tags.includes(f)) ? '' : 'none';
-      });
-    });
-  });
-</script>
+<script src="case-study.js" defer></script>
 </body>
 </html>
