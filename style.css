@@ -741,9 +741,7 @@ footer {
     z-index: 200;
     overflow-y: auto;
     list-style: none;
-    opacity: 1 !important;
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
+
   }
   .nav-links.open { transform: translateY(0); }
 
