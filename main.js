@@ -169,6 +169,11 @@
   if (overlay) {
     overlay.addEventListener('click', closeMenu);
   }
+
+  /* Close button inside drawer */
+  var navClose = document.getElementById('navClose');
+  if (navClose) { navClose.addEventListener('click', closeMenu); }
+
   /* Close menu when a nav link is clicked */
   if (navLinks) {
     navLinks.querySelectorAll('a').forEach(function (link) {
