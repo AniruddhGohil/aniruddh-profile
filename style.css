@@ -63,13 +63,17 @@ nav.scrolled { border-color: var(--border); padding: 14px 60px; }
 /* ── HERO ── */
 #hero {
   min-height: 100vh;
-  display: grid; grid-template-columns: 1fr 1fr;
+  display: grid; grid-template-columns: 1.1fr 0.9fr;
   align-items: center;
   padding: 120px 60px 80px;
-  gap: 60px;
+  gap: 40px;
   position: relative; overflow: hidden;
 }
 .hero-bg {
+  display: none; /* background handled by #hero::before */
+}
+#hero::before {
+  content: '';
   position: absolute; inset: 0; z-index: 0;
   background: radial-gradient(ellipse 80% 60% at 70% 50%, #e8effe 0%, transparent 70%);
   pointer-events: none;
@@ -139,6 +143,7 @@ h1 em { font-style: italic; color: var(--accent); }
   position: relative; z-index: 1;
   display: flex; justify-content: center; align-items: center;
   opacity: 0; animation: fadeIn 0.9s 0.5s forwards;
+  overflow: visible;
 }
 .hero-img-card {
   position: relative; width: 380px; height: 460px;
@@ -160,7 +165,7 @@ h1 em { font-style: italic; color: var(--accent); }
 .badge-text { font-size: 0.82rem; font-weight: 500; color: var(--ink); }
 .badge-sub { font-size: 0.72rem; color: var(--ink-muted); }
 .hero-float-card {
-  position: absolute; top: 40px; right: -30px;
+  position: absolute; top: 40px; right: -10px;
   background: var(--white); border-radius: 14px;
   padding: 16px 20px; box-shadow: 0 12px 36px rgba(0,0,0,0.1);
   animation: float 5s ease-in-out infinite;
