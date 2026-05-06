@@ -50,47 +50,51 @@
     });
   }
 
-  /* ── Portfolio dropdown — hover triggered ── */
+  /* ── Portfolio dropdown — hover on desktop, click on mobile ── */
   var portfolioToggle = document.getElementById('portfolioToggle');
-  var portfolioMenu = document.getElementById('portfolioMenu');
-  var portfolioWrap = portfolioToggle ? portfolioToggle.closest('.nav-dropdown-wrap') : null;
+  var portfolioMenu   = document.getElementById('portfolioMenu');
+  var portfolioWrap   = portfolioToggle ? portfolioToggle.closest('.nav-dropdown-wrap') : null;
 
   if (portfolioWrap && portfolioMenu) {
     var closeTimer;
+    var isMobile = function () { return window.innerWidth <= 900; };
 
+    /* Desktop: hover */
     portfolioWrap.addEventListener('mouseenter', function () {
+      if (isMobile()) return;
       clearTimeout(closeTimer);
       portfolioMenu.classList.add('open');
       portfolioToggle.classList.add('open');
     });
-
     portfolioWrap.addEventListener('mouseleave', function () {
+      if (isMobile()) return;
       closeTimer = setTimeout(function () {
         portfolioMenu.classList.remove('open');
         portfolioToggle.classList.remove('open');
       }, 180);
     });
-
     portfolioMenu.addEventListener('mouseenter', function () {
+      if (isMobile()) return;
       clearTimeout(closeTimer);
     });
-
     portfolioMenu.addEventListener('mouseleave', function () {
+      if (isMobile()) return;
       closeTimer = setTimeout(function () {
         portfolioMenu.classList.remove('open');
         portfolioToggle.classList.remove('open');
       }, 180);
     });
 
-    /* Keep click working for keyboard/touch users */
+    /* Both: click toggle */
     portfolioToggle.addEventListener('click', function (e) {
       e.stopPropagation();
       var isOpen = portfolioMenu.classList.toggle('open');
       portfolioToggle.classList.toggle('open', isOpen);
     });
 
+    /* Desktop only: close on outside click */
     document.addEventListener('click', function (e) {
-      if (!portfolioWrap.contains(e.target)) {
+      if (!isMobile() && !portfolioWrap.contains(e.target)) {
         portfolioMenu.classList.remove('open');
         portfolioToggle.classList.remove('open');
       }
