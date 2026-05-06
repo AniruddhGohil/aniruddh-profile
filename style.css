@@ -686,19 +686,36 @@ footer {
 .nav-close-item { display: none; }
 .nav-close-btn {
   background: none; border: none;
-  font-size: 0.85rem; font-weight: 500;
-  color: var(--ink-muted); cursor: pointer;
-  padding: 14px 28px;
-  font-family: 'DM Sans', sans-serif;
-  letter-spacing: 0.03em;
+  cursor: pointer; font-family: 'DM Sans', sans-serif;
 }
 @media (max-width: 900px) {
   .nav-close-item {
-    display: block; width: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 18px 20px 16px 24px;
     border-bottom: 2px solid var(--border);
-    margin-bottom: 8px;
+    background: var(--cream);
+    flex-shrink: 0;
   }
-  .nav-close-btn:hover { color: var(--ink); }
+  .nav-close-item::before {
+    content: 'Menu';
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .nav-close-btn {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem; color: var(--ink);
+    transition: background 0.2s;
+  }
+  .nav-close-btn:hover { background: var(--ink); color: #fff; }
 }
 
 /* ── HAMBURGER MENU ── */
@@ -755,7 +772,7 @@ footer {
     align-items: flex-start;
     justify-content: flex-start;
     gap: 0;
-    padding: 72px 0 40px;
+    padding: 0 0 40px;
     transform: translateX(110%);
     transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 200;
