@@ -29,6 +29,81 @@
     reveals.forEach(function (el) { revealObserver.observe(el); });
   }
 
+  /* ── Desktop portfolio dropdown — hover ── */
+  var portfolioToggle = document.getElementById('portfolioToggle');
+  var portfolioMenu   = document.getElementById('portfolioMenu');
+  var portfolioWrap   = portfolioToggle ? portfolioToggle.closest('.nav-dropdown-wrap') : null;
+
+  if (portfolioWrap && portfolioMenu) {
+    var closeTimer;
+    portfolioWrap.addEventListener('mouseenter', function () {
+      clearTimeout(closeTimer);
+      portfolioMenu.classList.add('open');
+      portfolioToggle.classList.add('open');
+    });
+    portfolioWrap.addEventListener('mouseleave', function () {
+      closeTimer = setTimeout(function () {
+        portfolioMenu.classList.remove('open');
+        portfolioToggle.classList.remove('open');
+      }, 150);
+    });
+    portfolioMenu.addEventListener('mouseenter', function () { clearTimeout(closeTimer); });
+    portfolioMenu.addEventListener('mouseleave', function () {
+      closeTimer = setTimeout(function () {
+        portfolioMenu.classList.remove('open');
+        portfolioToggle.classList.remove('open');
+      }, 150);
+    });
+    document.addEventListener('click', function (e) {
+      if (!portfolioWrap.contains(e.target)) {
+        portfolioMenu.classList.remove('open');
+        portfolioToggle.classList.remove('open');
+      }
+    });
+  }
+
+  /* ── Mobile drawer ── */
+  var hamburger  = document.getElementById('navHamburger');
+  var drawer     = document.getElementById('navDrawer');
+  var overlay    = document.getElementById('navOverlay');
+  var navClose   = document.getElementById('navClose');
+  var mobilePortfolioToggle = document.getElementById('mobilePortfolioToggle');
+  var mobilePortfolioSub    = document.getElementById('mobilePortfolioSub');
+
+  function openDrawer() {
+    if (!drawer) return;
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    hamburger.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    if (!drawer) return;
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  if (hamburger) { hamburger.addEventListener('click', function () { drawer.classList.contains('open') ? closeDrawer() : openDrawer(); }); }
+  if (overlay)   { overlay.addEventListener('click', closeDrawer); }
+  if (navClose)  { navClose.addEventListener('click', closeDrawer); }
+
+  if (mobilePortfolioToggle && mobilePortfolioSub) {
+    mobilePortfolioToggle.addEventListener('click', function () {
+      mobilePortfolioSub.classList.toggle('open');
+    });
+  }
+
+  if (drawer) {
+    drawer.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeDrawer);
+    });
+  }
+
   /* ── Case Studies filter (parent listing page only) ── */
   var filterBtns = document.querySelectorAll('.cs-filter');
   var featured = document.querySelector('.cs-featured');
