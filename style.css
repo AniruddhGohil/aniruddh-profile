@@ -10,7 +10,7 @@
   --accent-light: #e8effe;
   --border: #e4e4e8;
   --gold: #c8973a;
-  --section-gap: 120px;
+  --section-gap: 96px;
 }
 
 html { scroll-behavior: smooth; }
@@ -265,7 +265,7 @@ h1 em { font-style: italic; color: var(--accent); }
 
 .hero-image-wrap {
   position: relative; z-index: 1;
-  display: flex; justify-content: flex-start; align-items: center;
+  display: flex; justify-content: center; align-items: center;
   opacity: 0; animation: fadeIn 0.9s 0.5s forwards;
   overflow: visible;
 }
@@ -742,7 +742,7 @@ h2 {
 #process .section-label { color: var(--gold); }
 #process h2 { color: var(--white); }
 #process .section-intro { color: rgba(255,255,255,0.6); }
-.process-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; margin-top: 60px; }
+.process-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; margin-top: 60px; min-height: 200px; }
 .process-steps::before {
   content: ''; position: absolute; top: 28px; left: 12%; right: 12%;
   height: 1px; background: rgba(255,255,255,0.12);
