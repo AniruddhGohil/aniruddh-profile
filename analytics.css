@@ -360,13 +360,25 @@ nav.scrolled { padding: 12px 60px; }
 
 /* ── FOOTER ── */
 footer {
-  background: var(--surface); border-top: 1px solid var(--border);
-  padding: 32px 60px; display: flex; align-items: center; justify-content: space-between;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 56px 60px 40px;
 }
-.footer-name { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text); }
-.footer-copy { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); }
-.footer-link { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
-.footer-link:hover { opacity: 0.7; }
+.footer-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer-brand { display: flex; flex-direction: column; gap: 12px; }
+.footer-name { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--text); }
+.footer-tagline { font-size: 0.82rem; color: var(--muted); line-height: 1.65; max-width: 230px; margin: 0; }
+.footer-copy { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); opacity: 0.6; margin-top: 4px; }
+.footer-col { display: flex; flex-direction: column; gap: 10px; }
+.footer-col__title { font-family: var(--mono); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); opacity: 0.6; margin-bottom: 4px; }
+.footer-col__link { font-size: 0.83rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.footer-col__link:hover { color: var(--accent); }
 
 /* ── SCROLL REVEAL ── */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -395,7 +407,9 @@ footer {
   .table-header span:last-child,
   .table-row__page { display: none; }
   .cta-section { padding: 64px 24px; }
-  footer { flex-direction: column; gap: 10px; text-align: center; padding: 24px; }
+  footer { padding: 48px 24px 36px; }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer-brand { grid-column: 1 / -1; }
 }
 
 /* ── AVAILABILITY CHIP ── */

@@ -403,20 +403,23 @@
     footer {
       background: var(--surface);
       border-top: 1px solid var(--border);
-      padding: 32px 60px;
-      display: flex; align-items: center; justify-content: space-between;
+      padding: 56px 60px 40px;
     }
-    .footer-name {
-      font-family: 'Lora', serif; font-size: 0.95rem;
-      font-weight: 600; color: var(--ink);
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    .footer-copy { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-muted); }
-    .footer-link {
-      font-family: var(--mono); font-size: 0.75rem;
-      color: var(--accent); text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .footer-link:hover { opacity: 0.7; }
+    .footer-brand { display: flex; flex-direction: column; gap: 12px; }
+    .footer-name { font-family: 'Lora', serif; font-size: 1.05rem; font-weight: 700; color: var(--ink); }
+    .footer-tagline { font-size: 0.82rem; color: var(--ink-muted); line-height: 1.65; max-width: 230px; margin: 0; }
+    .footer-copy { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-muted); opacity: 0.6; margin-top: 4px; }
+    .footer-col { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col__title { font-family: var(--mono); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-muted); opacity: 0.6; margin-bottom: 4px; }
+    .footer-col__link { font-size: 0.83rem; color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
+    .footer-col__link:hover { color: var(--accent); }
 
     /* ── SCROLL REVEAL ── */
     .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -439,7 +442,9 @@
       .project-featured__left { padding: 28px 24px; }
       .project-featured__right { padding: 28px 24px 24px; }
       .cta-section { padding: 64px 24px; }
-      footer { flex-direction: column; gap: 10px; text-align: center; padding: 24px; }
+      footer { padding: 48px 24px 36px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-brand { grid-column: 1 / -1; }
     }
     /* ── AVAILABILITY CHIP ── */
     .avail-chip {
@@ -621,9 +626,34 @@
 </section>
 
 <footer>
-  <span class="footer-name">Aniruddh Gohil</span>
-  <a href="/aniruddh-profile/" class="footer-link">← Back to Home</a>
-  <span class="footer-copy">© 2026 · SEO & Data Analytics</span>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-name">Aniruddh Gohil</span>
+      <p class="footer-tagline">SEO & eCommerce growth specialist helping AU, NZ, UAE & India brands scale through organic search.</p>
+      <span class="footer-copy">© 2026 · Based in India · Working globally</span>
+    </div>
+    <div class="footer-col">
+      <span class="footer-col__title">SEO Portfolio</span>
+      <a href="case-study.html" class="footer-col__link">All Case Studies</a>
+      <a href="case-study-rugsdirect.html" class="footer-col__link">Rugs Direct</a>
+      <a href="case-study-clarks.html" class="footer-col__link">Clarks</a>
+      <a href="case-study-rivoli.html" class="footer-col__link">Rivoli</a>
+      <a href="case-study-cheapestrugs.html" class="footer-col__link">Cheapest Rugs</a>
+      <a href="case-study-optislim.html" class="footer-col__link">Optislim</a>
+      <a href="case-study-rasasi.html" class="footer-col__link">Rasasi</a>
+    </div>
+    <div class="footer-col">
+      <span class="footer-col__title">Data Analytics</span>
+      <a href="analytics.html" class="footer-col__link">All Projects</a>
+      <a href="analytics-higeia.html" class="footer-col__link">Higeia GTM</a>
+    </div>
+    <div class="footer-col">
+      <span class="footer-col__title">Connect</span>
+      <a href="https://wa.me/+919833993229" class="footer-col__link" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.linkedin.com/in/gohil-aniruddh/" class="footer-col__link" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/aniruddhgohil" class="footer-col__link" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
 </footer>
 
 <script src="analytics.js" defer></script>
