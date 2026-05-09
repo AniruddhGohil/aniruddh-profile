@@ -316,6 +316,8 @@ h1 em { font-style: italic; color: var(--accent); }
   background-size: 22px 22px;
   pointer-events: none; z-index: 0;
   border-radius: 30px;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 18%);
 }
 .hero-img-card {
   position: relative; width: 380px; height: 460px;
