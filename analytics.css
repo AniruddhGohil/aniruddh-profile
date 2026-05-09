@@ -418,6 +418,47 @@ footer {
 @keyframes chipSlideUp { to { opacity: 1; transform: translateY(0); } }
 @keyframes chipPulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
 
+/* ── SHARE BAR ── */
+.share-bar-wrap {
+  padding: 0 60px 64px;
+  display: flex; justify-content: center;
+}
+.share-bar {
+  display: flex; align-items: center; gap: 20px;
+  padding: 20px 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  flex-wrap: wrap;
+}
+.share-bar__label {
+  font-size: 0.85rem; font-weight: 500;
+  color: var(--muted); flex-shrink: 0;
+}
+.share-bar__btns {
+  display: flex; gap: 10px; flex-wrap: wrap;
+}
+.share-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 18px; border-radius: 8px;
+  font-size: 0.82rem; font-weight: 500;
+  text-decoration: none; cursor: pointer;
+  border: 1.5px solid var(--border);
+  background: transparent; font-family: inherit;
+  transition: all 0.2s;
+}
+.share-btn--linkedin { color: #0a66c2; border-color: rgba(10,102,194,0.3); }
+.share-btn--linkedin:hover { background: rgba(10,102,194,0.08); border-color: rgba(10,102,194,0.5); }
+.share-btn--native { color: var(--accent); border-color: rgba(26,86,219,0.3); }
+.share-btn--native:hover { background: rgba(26,86,219,0.08); border-color: rgba(26,86,219,0.5); }
+.share-btn--copy { color: var(--muted); }
+.share-btn--copy:hover { color: var(--text); border-color: rgba(15,17,23,0.3); }
+.share-btn--copy.copied { color: #16a34a; border-color: rgba(22,163,74,0.4); background: rgba(22,163,74,0.07); }
+@media (max-width: 900px) {
+  .share-bar-wrap { padding: 0 24px 48px; }
+  .share-bar { gap: 16px; padding: 16px 20px; }
+}
+
 /* ── BREADCRUMB ── */
 .breadcrumb {
   position: static; background: transparent;

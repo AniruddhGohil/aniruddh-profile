@@ -104,6 +104,48 @@
     });
   }
 
+  /* ── Share bar ── */
+  var linkedinShare = document.getElementById('linkedinShare');
+  var copyLinkBtn   = document.getElementById('copyLinkBtn');
+  var nativeShare   = document.getElementById('nativeShare');
+  var shareButtons  = document.getElementById('shareButtons');
+
+  if (linkedinShare) {
+    linkedinShare.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href);
+  }
+
+  /* Show native share button on mobile if Web Share API is available */
+  if (nativeShare && navigator.share && shareButtons) {
+    shareButtons.classList.add('has-native');
+    nativeShare.style.display = 'inline-flex';
+    nativeShare.addEventListener('click', function () {
+      navigator.share({
+        title: document.title,
+        url: window.location.href
+      }).catch(function () { /* dismissed */ });
+    });
+  }
+
+  if (copyLinkBtn) {
+    copyLinkBtn.addEventListener('click', function () {
+      var span = copyLinkBtn.querySelector('span');
+      var url  = window.location.href;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function () { showCopied(); }).catch(fallbackCopy);
+      } else { fallbackCopy(); }
+      function fallbackCopy() {
+        var ta = document.createElement('textarea');
+        ta.value = url; ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
+        document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+        document.body.removeChild(ta); showCopied();
+      }
+      function showCopied() {
+        copyLinkBtn.classList.add('copied'); span.textContent = 'Copied ✓';
+        setTimeout(function () { copyLinkBtn.classList.remove('copied'); span.textContent = 'Copy Link'; }, 2200);
+      }
+    });
+  }
+
   /* ── Case Studies filter (parent listing page only) ── */
   var filterBtns = document.querySelectorAll('.cs-filter');
   var featured = document.querySelector('.cs-featured');
