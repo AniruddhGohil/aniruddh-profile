@@ -30,6 +30,35 @@
     reveals.forEach(function (el) { revealObserver.observe(el); });
   }
 
+  /* ── Mobile drawer ── */
+  var hamburger  = document.getElementById('navHamburger');
+  var drawer     = document.getElementById('navDrawer');
+  var overlay    = document.getElementById('navOverlay');
+  var navClose   = document.getElementById('navClose');
+  var mobilePortfolioToggle = document.getElementById('mobilePortfolioToggle');
+  var mobilePortfolioSub    = document.getElementById('mobilePortfolioSub');
+
+  function openDrawer() {
+    if (!drawer) return;
+    drawer.classList.add('open'); overlay.classList.add('open');
+    hamburger.classList.add('open'); hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    if (!drawer) return;
+    drawer.classList.remove('open'); overlay.classList.remove('open');
+    hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  if (hamburger) { hamburger.addEventListener('click', function () { drawer.classList.contains('open') ? closeDrawer() : openDrawer(); }); }
+  if (overlay)   { overlay.addEventListener('click', closeDrawer); }
+  if (navClose)  { navClose.addEventListener('click', closeDrawer); }
+  if (mobilePortfolioToggle && mobilePortfolioSub) {
+    mobilePortfolioToggle.addEventListener('click', function () { mobilePortfolioSub.classList.toggle('open'); });
+  }
+  if (drawer) { drawer.querySelectorAll('a').forEach(function (link) { link.addEventListener('click', closeDrawer); }); }
+
   /* ── Portfolio dropdown — hover triggered ── */
   var portfolioToggle = document.getElementById('portfolioToggle');
   var portfolioMenu = document.getElementById('portfolioMenu');
