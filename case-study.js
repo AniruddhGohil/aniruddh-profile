@@ -114,10 +114,12 @@
     linkedinShare.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href);
   }
 
-  /* Show native share button on mobile if Web Share API is available */
+  /* On mobile where Web Share API is available, show native share + hide LinkedIn button.
+     Native share opens the OS share sheet → LinkedIn app is already logged in there. */
   if (nativeShare && navigator.share && shareButtons) {
     shareButtons.classList.add('has-native');
     nativeShare.style.display = 'inline-flex';
+    if (linkedinShare) { linkedinShare.style.display = 'none'; }
     nativeShare.addEventListener('click', function () {
       navigator.share({
         title: document.title,

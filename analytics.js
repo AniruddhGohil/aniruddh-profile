@@ -90,6 +90,7 @@
   if (nativeShare && navigator.share && shareButtons) {
     shareButtons.classList.add('has-native');
     nativeShare.style.display = 'inline-flex';
+    if (linkedinShare) { linkedinShare.style.display = 'none'; }
     nativeShare.addEventListener('click', function () {
       navigator.share({ title: document.title, url: window.location.href }).catch(function () {});
     });
