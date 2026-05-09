@@ -104,6 +104,27 @@
     });
   }
 
+  /* ── Reading progress bar ── */
+  var progressBar = document.getElementById('readingProgress');
+  if (progressBar) {
+    window.addEventListener('scroll', function () {
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (docHeight > 0 ? Math.min((scrollTop / docHeight) * 100, 100) : 0) + '%';
+    }, { passive: true });
+  }
+
+  /* ── Back to top ── */
+  var backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    window.addEventListener('scroll', function () {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   /* ── Share bar ── */
   var linkedinShare = document.getElementById('linkedinShare');
   var copyLinkBtn   = document.getElementById('copyLinkBtn');

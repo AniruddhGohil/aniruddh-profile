@@ -418,6 +418,34 @@ footer {
 @keyframes chipSlideUp { to { opacity: 1; transform: translateY(0); } }
 @keyframes chipPulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
 
+/* ── READING PROGRESS BAR ── */
+.progress-bar {
+  position: fixed; top: 0; left: 0; z-index: 200;
+  height: 3px; width: 0%;
+  background: var(--accent);
+  transition: width 0.08s linear;
+  pointer-events: none;
+  border-radius: 0 2px 2px 0;
+}
+
+/* ── BACK TO TOP ── */
+.back-to-top {
+  position: fixed; bottom: 90px; right: 28px; z-index: 400;
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--surface); border: 1.5px solid var(--border);
+  color: var(--text); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  opacity: 0; transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s, border-color 0.2s, box-shadow 0.2s;
+  pointer-events: none;
+}
+.back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.back-to-top:hover { border-color: var(--accent); box-shadow: 0 6px 20px rgba(26,86,219,0.18); }
+@media (max-width: 900px) {
+  .back-to-top { bottom: 84px; right: 16px; width: 38px; height: 38px; }
+}
+
 /* ── SHARE BAR ── */
 .share-bar-wrap {
   padding: 0 60px 64px;
