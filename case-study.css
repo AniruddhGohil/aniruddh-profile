@@ -488,3 +488,12 @@
 .avail-chip__cta { color: #fff; font-weight: 600; border-left: 1px solid rgba(255,255,255,0.18); padding-left: 10px; margin-left: 2px; }
 @keyframes chipSlideUp { to { opacity: 1; transform: translateY(0); } }
 @keyframes chipPulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+
+/* ── BREADCRUMB ── */
+.breadcrumb { margin-bottom: 22px; }
+.breadcrumb ol { display: flex; align-items: center; gap: 6px; list-style: none; flex-wrap: wrap; }
+.breadcrumb li { display: flex; align-items: center; gap: 6px; font-size: 0.73rem; color: var(--ink-muted); }
+.breadcrumb li + li::before { content: '/'; opacity: 0.35; }
+.breadcrumb a { color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb [aria-current="page"] { color: var(--ink-soft); font-weight: 500; }

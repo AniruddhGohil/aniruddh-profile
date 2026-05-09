@@ -892,6 +892,15 @@ footer {
 .footer-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--white); }
 .footer-copy { font-size: 0.8rem; }
 
+/* ── BREADCRUMB ── */
+.breadcrumb { margin-bottom: 22px; }
+.breadcrumb ol { display: flex; align-items: center; gap: 6px; list-style: none; flex-wrap: wrap; }
+.breadcrumb li { display: flex; align-items: center; gap: 6px; font-size: 0.73rem; color: var(--ink-muted); }
+.breadcrumb li + li::before { content: '/'; opacity: 0.35; }
+.breadcrumb a { color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb [aria-current="page"] { color: var(--ink-soft); font-weight: 500; }
+
 /* ── AVAILABILITY CHIP ── */
 .avail-chip {
   position: fixed; bottom: 28px; right: 28px; z-index: 500;

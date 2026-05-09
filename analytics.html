@@ -28,6 +28,9 @@
     "author": { "@type": "Person", "name": "Aniruddh Gohil" }
   }
   </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aniruddhgohil.github.io/aniruddh-profile/"},{"@type":"ListItem","position":2,"name":"Data Analytics","item":"https://aniruddhgohil.github.io/aniruddh-profile/analytics.html"}]}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -456,6 +459,14 @@
     .avail-chip__cta { color: #fff; font-weight: 600; border-left: 1px solid rgba(255,255,255,0.18); padding-left: 10px; margin-left: 2px; }
     @keyframes chipSlideUp { to { opacity: 1; transform: translateY(0); } }
     @keyframes chipPulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+    /* ── BREADCRUMB ── */
+    .breadcrumb { margin-bottom: 22px; }
+    .breadcrumb ol { display: flex; align-items: center; gap: 6px; list-style: none; flex-wrap: wrap; }
+    .breadcrumb li { display: flex; align-items: center; gap: 6px; font-size: 0.73rem; color: var(--ink-muted); }
+    .breadcrumb li + li::before { content: '/'; opacity: 0.35; }
+    .breadcrumb a { color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb [aria-current="page"] { color: var(--ink-soft); font-weight: 500; }
   </style>
 </head>
 <body>
@@ -496,6 +507,12 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero__inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/aniruddh-profile/">Home</a></li>
+        <li aria-current="page">Data Analytics</li>
+      </ol>
+    </nav>
     <span class="hero__label">Data Analytics Portfolio</span>
     <h1 class="hero__title">Tracking that turns<br><em>behaviour into insight.</em></h1>
     <p class="hero__sub">GTM implementations, GA4 event tracking, Looker Studio dashboards, and Python-based analytics — designed to give brands real visibility into how users move, where they drop off, and what drives conversion.</p>
