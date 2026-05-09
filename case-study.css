@@ -485,6 +485,47 @@
 @keyframes chipSlideUp { to { opacity: 1; transform: translateY(0); } }
 @keyframes chipPulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
 
+/* ── READING TIME BADGE ── */
+.cs-hero__read-time {
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.05em;
+  color: var(--dark-muted);
+  border: 1px solid var(--dark-border);
+  padding: 5px 14px; border-radius: 20px;
+  background: transparent;
+}
+
+/* ── CASE STUDY PREV / NEXT NAV ── */
+.cs-nav-wrap {
+  padding: 0 60px 48px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+}
+.cs-nav-wrap--single { grid-template-columns: 1fr; max-width: 360px; }
+.cs-nav-link {
+  display: flex; flex-direction: column; gap: 5px;
+  padding: 20px 24px; border-radius: 12px;
+  background: var(--white); border: 1.5px solid var(--border);
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.cs-nav-link:hover {
+  border-color: var(--accent); transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(26,86,219,0.08);
+}
+.cs-nav-link--next { text-align: right; }
+.cs-nav-link__dir {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--dark-muted);
+}
+.cs-nav-link__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem; font-weight: 700; color: var(--dark-text);
+}
+.cs-nav-link__label { font-size: 0.75rem; color: var(--dark-muted); }
+@media (max-width: 900px) {
+  .cs-nav-wrap { padding: 0 24px 40px; grid-template-columns: 1fr; }
+  .cs-nav-wrap--single { max-width: 100%; }
+}
+
 /* ── READING PROGRESS BAR ── */
 .progress-bar {
   position: fixed; top: 0; left: 0; z-index: 200;

@@ -104,6 +104,59 @@
     });
   }
 
+  /* ── Estimated reading time ── */
+  var readingTimeEl = document.getElementById('readingTime');
+  if (readingTimeEl) {
+    var rtContent = '';
+    document.querySelectorAll('.cs-hero__summary, .challenge-card__desc, .timeline-desc, .result-card__desc, .takeaway__text').forEach(function (el) {
+      rtContent += ' ' + (el.innerText || el.textContent || '');
+    });
+    var rtWords   = rtContent.trim().split(/\s+/).filter(Boolean).length;
+    var rtMinutes = Math.max(1, Math.ceil(rtWords / 230));
+    readingTimeEl.textContent = rtMinutes + ' min read';
+  }
+
+  /* ── Case study prev / next navigation ── */
+  var caseStudyNav = document.getElementById('caseStudyNav');
+  if (caseStudyNav) {
+    var studies = [
+      { url: 'case-study-rugsdirect.html',   title: 'Rugs Direct',     label: 'ANZ · +238% Revenue'      },
+      { url: 'case-study-rivoli.html',        title: 'Rivoli',          label: 'UAE · +30% Traffic'        },
+      { url: 'case-study-clarks.html',        title: 'Clarks UAE',      label: 'UAE · Local SEO'           },
+      { url: 'case-study-rasasi.html',        title: 'Rasasi',          label: 'UAE · +20% in 3 Months'   },
+      { url: 'case-study-cheapestrugs.html',  title: 'Cheapest Rugs',   label: 'ANZ · Crawl Recovery'      },
+      { url: 'case-study-optislim.html',      title: 'Optislim',        label: 'ANZ · AI Clustering'       }
+    ];
+    var currentFile = window.location.pathname.split('/').pop();
+    var idx = -1;
+    studies.forEach(function (s, i) { if (s.url === currentFile) { idx = i; } });
+    if (idx > -1) {
+      var prev = idx > 0 ? studies[idx - 1] : null;
+      var next = idx < studies.length - 1 ? studies[idx + 1] : null;
+      var navHtml = '';
+      if (prev) {
+        navHtml += '<a href="' + prev.url + '" class="cs-nav-link cs-nav-link--prev reveal">' +
+          '<span class="cs-nav-link__dir">← Previous</span>' +
+          '<span class="cs-nav-link__title">' + prev.title + '</span>' +
+          '<span class="cs-nav-link__label">' + prev.label + '</span>' +
+          '</a>';
+      }
+      if (next) {
+        navHtml += '<a href="' + next.url + '" class="cs-nav-link cs-nav-link--next reveal">' +
+          '<span class="cs-nav-link__dir">Next →</span>' +
+          '<span class="cs-nav-link__title">' + next.title + '</span>' +
+          '<span class="cs-nav-link__label">' + next.label + '</span>' +
+          '</a>';
+      }
+      if (!prev || !next) { caseStudyNav.classList.add('cs-nav-wrap--single'); }
+      caseStudyNav.innerHTML = navHtml;
+      /* Re-observe new reveal elements */
+      if (typeof revealObserver !== 'undefined') {
+        caseStudyNav.querySelectorAll('.reveal').forEach(function (el) { revealObserver.observe(el); });
+      }
+    }
+  }
+
   /* ── Reading progress bar ── */
   var progressBar = document.getElementById('readingProgress');
   if (progressBar) {
