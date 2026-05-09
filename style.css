@@ -1135,9 +1135,9 @@ footer {
     gap: 32px 0;
   }
   .hero-content { grid-row: 2; grid-column: 1; padding-bottom: 0; }
-  .hero-image-wrap { grid-row: 1; grid-column: 1; order: -1; justify-content: center; }
+  .hero-image-wrap { grid-row: 1; grid-column: 1; order: -1; justify-content: center; align-items: center; }
   .hero-marquee-wrap { grid-row: 3; grid-column: 1; margin-top: 8px; }
-  .hero-img-card { width: 280px; height: 340px; }
+  .hero-img-card { width: 280px; height: 340px; margin-top: 0; }
   .hero-float-card { display: none; }
   .hero-float-card-2 { display: none; }
   .hero-dot-grid { display: none; }
