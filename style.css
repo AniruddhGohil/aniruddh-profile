@@ -191,7 +191,7 @@ nav.scrolled { border-color: var(--border); padding: 12px 60px; }
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr auto;
   align-items: center;
-  padding: 120px 60px 0;
+  padding: 88px 60px 0;
   gap: 20px 20px;
   position: relative; overflow: hidden;
 }
@@ -318,7 +318,7 @@ h1 em { font-style: italic; color: var(--accent); }
   border-radius: 30px;
 }
 .hero-img-card {
-  position: relative; width: 380px; height: 460px;
+  position: relative; width: 400px; height: 560px;
   border-radius: 24px; overflow: hidden;
   box-shadow: 0 32px 80px rgba(15,17,23,0.18);
 }
@@ -1091,7 +1091,7 @@ footer {
   .hero-content { grid-row: 2; grid-column: 1; padding-bottom: 0; }
   .hero-image-wrap { grid-row: 1; grid-column: 1; order: -1; justify-content: center; }
   .hero-marquee-wrap { grid-row: 3; grid-column: 1; margin-top: 8px; }
-  .hero-img-card { width: 280px; height: 340px; }
+  .hero-img-card { width: 280px; height: 360px; }
   .hero-float-card { display: none; }
   .hero-float-card-2 { display: none; }
   .hero-dot-grid { display: none; }
