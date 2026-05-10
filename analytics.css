@@ -12,7 +12,7 @@
   --border:         #e4e4e8;
   --border-bright:  #d0d0d8;
   --text:           #0f1117;
-  --muted:          #7a7d8a;
+  --muted:          #676a78;
   --accent:         #1a56db;
   --accent-dim:     #e8effe;
   --accent-border:  #b8ccf8;
@@ -25,6 +25,7 @@
 }
 
 html { scroll-behavior: smooth; }
+p a { text-decoration: underline; color: var(--accent); }
 
 body {
   font-family: 'DM Sans', sans-serif;
