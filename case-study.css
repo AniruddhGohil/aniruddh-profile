@@ -113,6 +113,15 @@
       padding: 5px 14px; border-radius: 20px;
     }
 
+    .cs-hero__logo {
+      margin-bottom: 20px;
+    }
+    .cs-hero__logo-img {
+      max-height: 44px;
+      width: auto;
+      max-width: 160px;
+      object-fit: contain;
+    }
     .cs-hero__domain {
       font-size: 0.9rem; font-weight: 500;
       color: var(--accent); letter-spacing: 0.03em;
