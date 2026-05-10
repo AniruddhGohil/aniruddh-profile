@@ -114,13 +114,19 @@
     }
 
     .cs-hero__logo {
-      margin-bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255,255,255,0.96);
+      padding: 10px 20px;
+      border-radius: 10px;
+      margin-bottom: 24px;
     }
     .cs-hero__logo-img {
-      max-height: 44px;
+      max-height: 36px;
       width: auto;
-      max-width: 160px;
+      max-width: 150px;
       object-fit: contain;
+      display: block;
     }
     .cs-hero__domain {
       font-size: 0.9rem; font-weight: 500;
