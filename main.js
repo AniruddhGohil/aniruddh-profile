@@ -51,32 +51,32 @@
   }
 
 
-  /* ── Helper: wire up a desktop hover dropdown ── */
+  /* ── Helper: wire up a desktop hover + click dropdown ── */
   function initDesktopDropdown(toggleId, menuId) {
     var toggle = document.getElementById(toggleId);
     var menu   = document.getElementById(menuId);
     var wrap   = toggle ? toggle.closest('.nav-dropdown-wrap') : null;
     if (!wrap || !menu) return;
     var timer;
-    wrap.addEventListener('mouseenter', function () {
-      clearTimeout(timer);
-      menu.classList.add('open'); toggle.classList.add('open');
-    });
-    wrap.addEventListener('mouseleave', function () {
-      timer = setTimeout(function () {
-        menu.classList.remove('open'); toggle.classList.remove('open');
-      }, 150);
-    });
+
+    function openMenu()  { clearTimeout(timer); menu.classList.add('open');    toggle.classList.add('open');    }
+    function closeMenu() { menu.classList.remove('open'); toggle.classList.remove('open'); }
+
+    /* Hover (mouse) */
+    wrap.addEventListener('mouseenter', function () { clearTimeout(timer); openMenu(); });
+    wrap.addEventListener('mouseleave', function () { timer = setTimeout(closeMenu, 150); });
     menu.addEventListener('mouseenter', function () { clearTimeout(timer); });
-    menu.addEventListener('mouseleave', function () {
-      timer = setTimeout(function () {
-        menu.classList.remove('open'); toggle.classList.remove('open');
-      }, 150);
+    menu.addEventListener('mouseleave', function () { timer = setTimeout(closeMenu, 150); });
+
+    /* Click / tap toggle */
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      menu.classList.contains('open') ? closeMenu() : openMenu();
     });
+
+    /* Click outside closes */
     document.addEventListener('click', function (e) {
-      if (!wrap.contains(e.target)) {
-        menu.classList.remove('open'); toggle.classList.remove('open');
-      }
+      if (!wrap.contains(e.target)) closeMenu();
     });
   }
 
