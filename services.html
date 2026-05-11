@@ -163,12 +163,45 @@
     }
     .svc-cta__btn:hover { background: #1344b8; transform: translateY(-2px); }
 
+    /* ── Tablet (≤900px) ── */
     @media (max-width: 900px) {
       .svc-hero { padding: 110px 24px 56px; }
       .svc-body { padding: 0 24px 72px; }
-      .svc-section { grid-template-columns: 1fr; gap: 28px; padding: 48px 0; }
+      .svc-section {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 48px 0;
+      }
       .svc-section__left { position: static; }
-      .svc-cta { padding: 40px 24px; margin-bottom: 72px; }
+      .svc-cta { padding: 48px 32px; margin-bottom: 72px; }
+    }
+
+    /* ── Small-phone nav: hide "Home" text, show only arrow ── */
+    @media (max-width: 400px) {
+      .nav-back span { display: none; }
+    }
+
+    /* ── Phone (≤520px) ── */
+    @media (max-width: 520px) {
+      .svc-hero { padding: 96px 20px 48px; }
+      .svc-hero__sub { font-size: 0.96rem; }
+      .svc-body { padding: 0 20px 56px; }
+      .svc-section { gap: 20px; padding: 40px 0; }
+      .svc-section__icon { font-size: 2rem; margin-bottom: 10px; }
+      .svc-section__title { font-size: 1.45rem; margin-bottom: 18px; }
+      .svc-section__desc { font-size: 0.925rem; line-height: 1.75; margin-bottom: 24px; }
+      .svc-section__cta {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+      }
+      .svc-cta { padding: 36px 20px; border-radius: 16px; margin-bottom: 56px; }
+      .svc-cta__sub { font-size: 0.92rem; }
+      .svc-cta__btn {
+        width: 100%;
+        justify-content: center;
+        padding: 15px 20px;
+      }
     }
   </style>
 </head>

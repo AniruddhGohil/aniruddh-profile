@@ -48,6 +48,16 @@ nav.scrolled { border-color: var(--border); padding: 12px 60px; }
 }
 .nav-logo:hover .nav-logo-img { border-color: var(--accent); }
 
+/* Back link — used on inner pages (services, sitemap, analytics) */
+.nav-back {
+  font-size: 0.85rem; font-weight: 500;
+  color: var(--ink-soft); text-decoration: none;
+  display: flex; align-items: center; gap: 6px;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.nav-back:hover { color: var(--accent); }
+
 /* Desktop nav links */
 .nav-links-desktop {
   display: flex; gap: 36px; list-style: none; align-items: center;
