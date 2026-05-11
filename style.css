@@ -764,59 +764,6 @@ h2 {
   .cs-filter { font-size: 12px; padding: 6px 14px; }
 }
 
-/* ── SERVICES ── */
-#services { background: var(--white); }
-.services-list { display: flex; flex-direction: column; }
-.service-row {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 48px;
-  padding: 40px 0;
-  border-bottom: 1px solid var(--border);
-  transition: background 0.2s;
-}
-.service-row:first-child { border-top: 1px solid var(--border); }
-.service-row__left {
-  display: flex; flex-direction: column; gap: 10px;
-}
-.service-row__num {
-  font-size: 0.68rem; font-weight: 700;
-  letter-spacing: 0.14em; color: var(--ink-muted);
-  text-transform: uppercase;
-}
-.service-row__icon { font-size: 1.8rem; line-height: 1; }
-.service-row__title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem; font-weight: 700;
-  color: var(--ink); line-height: 1.2;
-  margin: 0; flex: 1;
-}
-.service-row__cta {
-  font-size: 0.82rem; font-weight: 600;
-  color: var(--accent); text-decoration: none;
-  display: inline-block; margin-top: 4px;
-  transition: letter-spacing 0.2s;
-}
-.service-row__cta:hover { text-decoration: underline; }
-.service-row__right {
-  display: flex; flex-direction: column;
-  gap: 16px; justify-content: center;
-}
-.service-row__desc {
-  font-size: 0.92rem; line-height: 1.8;
-  color: var(--ink-soft); margin: 0;
-}
-.service-row__tools {
-  display: flex; flex-wrap: wrap; gap: 6px;
-}
-.service-row__tools span {
-  font-size: 0.7rem; font-weight: 500;
-  padding: 3px 10px; border-radius: 20px;
-  background: var(--cream);
-  border: 1px solid var(--border);
-  color: var(--ink-muted);
-}
-
 /* ── CLIENTS ── */
 #clients {
   padding: 52px 60px;
@@ -1240,10 +1187,6 @@ footer {
   .hero-stats { gap: 0; padding-bottom: 4px; }
   .hero-stat { padding: 14px 18px; }
   .hero-stat:first-child { padding-left: 0; }
-  .service-row { grid-template-columns: 1fr; gap: 16px; padding: 32px 0; }
-  .service-row__left { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 12px; }
-  .service-row__num { width: 100%; }
-  .service-row__title { font-size: 1.1rem; }
   #clients { padding: 36px 24px; }
   .clients-grid { gap: 0; }
   .client-item { padding: 14px 20px; border-right: none; border-bottom: 1px solid var(--border); width: 50%; }

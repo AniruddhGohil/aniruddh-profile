@@ -51,38 +51,38 @@
   }
 
 
-  /* ── Desktop portfolio dropdown — hover ── */
-  var portfolioToggle = document.getElementById('portfolioToggle');
-  var portfolioMenu   = document.getElementById('portfolioMenu');
-  var portfolioWrap   = portfolioToggle ? portfolioToggle.closest('.nav-dropdown-wrap') : null;
-
-  if (portfolioWrap && portfolioMenu) {
-    var closeTimer;
-    portfolioWrap.addEventListener('mouseenter', function () {
-      clearTimeout(closeTimer);
-      portfolioMenu.classList.add('open');
-      portfolioToggle.classList.add('open');
+  /* ── Helper: wire up a desktop hover dropdown ── */
+  function initDesktopDropdown(toggleId, menuId) {
+    var toggle = document.getElementById(toggleId);
+    var menu   = document.getElementById(menuId);
+    var wrap   = toggle ? toggle.closest('.nav-dropdown-wrap') : null;
+    if (!wrap || !menu) return;
+    var timer;
+    wrap.addEventListener('mouseenter', function () {
+      clearTimeout(timer);
+      menu.classList.add('open'); toggle.classList.add('open');
     });
-    portfolioWrap.addEventListener('mouseleave', function () {
-      closeTimer = setTimeout(function () {
-        portfolioMenu.classList.remove('open');
-        portfolioToggle.classList.remove('open');
+    wrap.addEventListener('mouseleave', function () {
+      timer = setTimeout(function () {
+        menu.classList.remove('open'); toggle.classList.remove('open');
       }, 150);
     });
-    portfolioMenu.addEventListener('mouseenter', function () { clearTimeout(closeTimer); });
-    portfolioMenu.addEventListener('mouseleave', function () {
-      closeTimer = setTimeout(function () {
-        portfolioMenu.classList.remove('open');
-        portfolioToggle.classList.remove('open');
+    menu.addEventListener('mouseenter', function () { clearTimeout(timer); });
+    menu.addEventListener('mouseleave', function () {
+      timer = setTimeout(function () {
+        menu.classList.remove('open'); toggle.classList.remove('open');
       }, 150);
     });
     document.addEventListener('click', function (e) {
-      if (!portfolioWrap.contains(e.target)) {
-        portfolioMenu.classList.remove('open');
-        portfolioToggle.classList.remove('open');
+      if (!wrap.contains(e.target)) {
+        menu.classList.remove('open'); toggle.classList.remove('open');
       }
     });
   }
+
+  /* ── Desktop dropdowns ── */
+  initDesktopDropdown('portfolioToggle', 'portfolioMenu');
+  initDesktopDropdown('servicesToggle',  'servicesMenu');
 
   /* ── Mobile drawer ── */
   var hamburger  = document.getElementById('navHamburger');
@@ -91,6 +91,8 @@
   var navClose   = document.getElementById('navClose');
   var mobilePortfolioToggle = document.getElementById('mobilePortfolioToggle');
   var mobilePortfolioSub    = document.getElementById('mobilePortfolioSub');
+  var mobileServicesToggle  = document.getElementById('mobileServicesToggle');
+  var mobileServicesSub     = document.getElementById('mobileServicesSub');
 
   function openDrawer() {
     if (!drawer) return;
@@ -118,6 +120,13 @@
   if (mobilePortfolioToggle && mobilePortfolioSub) {
     mobilePortfolioToggle.addEventListener('click', function () {
       mobilePortfolioSub.classList.toggle('open');
+    });
+  }
+
+  /* Mobile services sub-menu toggle */
+  if (mobileServicesToggle && mobileServicesSub) {
+    mobileServicesToggle.addEventListener('click', function () {
+      mobileServicesSub.classList.toggle('open');
     });
   }
 
