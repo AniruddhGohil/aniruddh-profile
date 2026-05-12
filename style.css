@@ -304,14 +304,6 @@ h1 em { font-style: italic; color: var(--accent); }
   display: inline-block;
 }
 .btn-secondary:hover { border-color: var(--ink); transform: translateY(-2px); }
-.hero-cv-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  margin-top: 16px; font-size: 0.82rem; font-weight: 500;
-  color: var(--ink-muted); text-decoration: none;
-  opacity: 0; animation: fadeUp 0.7s 1s forwards;
-  transition: color 0.2s;
-}
-.hero-cv-link:hover { color: var(--accent); }
 
 .hero-image-wrap {
   position: relative; z-index: 1;
