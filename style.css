@@ -935,7 +935,7 @@ h2 {
 
 /* ── PROFILES ── */
 /* ── CONTACT ── */
-#contact { background: var(--ink); }
+#contact { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.1); }
 .contact-wrap {
   max-width: 1200px; margin: 0 auto;
   padding: 96px 60px;
