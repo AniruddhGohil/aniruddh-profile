@@ -304,6 +304,14 @@ h1 em { font-style: italic; color: var(--accent); }
   display: inline-block;
 }
 .btn-secondary:hover { border-color: var(--ink); transform: translateY(-2px); }
+.hero-cv-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 16px; font-size: 0.82rem; font-weight: 500;
+  color: var(--ink-muted); text-decoration: none;
+  opacity: 0; animation: fadeUp 0.7s 1s forwards;
+  transition: color 0.2s;
+}
+.hero-cv-link:hover { color: var(--accent); }
 
 .hero-image-wrap {
   position: relative; z-index: 1;
@@ -1073,6 +1081,22 @@ footer {
 .breadcrumb [aria-current="page"] { color: var(--ink-soft); font-weight: 500; }
 
 /* ── AVAILABILITY CHIP ── */
+/* ── Back-to-top ── */
+#backToTop {
+  position: fixed; bottom: 100px; right: 28px; z-index: 490;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--white); color: var(--ink);
+  border: 1.5px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  opacity: 0; transform: translateY(12px);
+  transition: opacity 0.25s, transform 0.25s, box-shadow 0.2s, background 0.2s;
+  pointer-events: none;
+}
+#backToTop.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+#backToTop:hover { background: var(--ink); color: var(--white); border-color: var(--ink); box-shadow: 0 6px 20px rgba(0,0,0,0.18); }
+
 .avail-chip {
   position: fixed; bottom: 28px; right: 28px; z-index: 500;
   display: flex; align-items: center; gap: 10px;

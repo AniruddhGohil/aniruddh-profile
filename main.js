@@ -137,4 +137,19 @@
     });
   }
 
+  /* ── Back-to-top button ── */
+  var btt = document.createElement('button');
+  btt.id = 'backToTop';
+  btt.setAttribute('aria-label', 'Back to top');
+  btt.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M18 15l-6-6-6 6"/></svg>';
+  document.body.appendChild(btt);
+
+  window.addEventListener('scroll', function () {
+    btt.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  btt.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
 }());

@@ -4,55 +4,86 @@
   <!-- Homepage -->
   <url>
     <loc>https://aniruddhgohil.github.io/aniruddh-profile/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- SEO Portfolio index -->
+  <!-- Services -->
   <url>
-    <loc>https://aniruddhgohil.github.io/aniruddh-profile/case-study.html</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://aniruddhgohil.github.io/aniruddh-profile/services.html</loc>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://aniruddhgohil.github.io/aniruddh-profile/service-technical-seo.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://aniruddhgohil.github.io/aniruddh-profile/service-ecommerce-seo.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://aniruddhgohil.github.io/aniruddh-profile/service-local-seo.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://aniruddhgohil.github.io/aniruddh-profile/service-content-strategy.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://aniruddhgohil.github.io/aniruddh-profile/white-label-seo.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
-  <!-- Individual case studies -->
+  <!-- SEO Portfolio -->
+  <url>
+    <loc>https://aniruddhgohil.github.io/aniruddh-profile/case-study.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://aniruddhgohil.github.io/aniruddh-profile/case-study-rugsdirect.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://aniruddhgohil.github.io/aniruddh-profile/case-study-clarks.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://aniruddhgohil.github.io/aniruddh-profile/case-study-rivoli.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://aniruddhgohil.github.io/aniruddh-profile/case-study-cheapestrugs.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://aniruddhgohil.github.io/aniruddh-profile/case-study-optislim.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://aniruddhgohil.github.io/aniruddh-profile/case-study-rasasi.html</loc>
     <lastmod>2026-05-09</lastmod>
@@ -60,15 +91,13 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Data Analytics index -->
+  <!-- Data Analytics -->
   <url>
     <loc>https://aniruddhgohil.github.io/aniruddh-profile/analytics.html</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- Individual analytics projects -->
   <url>
     <loc>https://aniruddhgohil.github.io/aniruddh-profile/analytics-higeia.html</loc>
     <lastmod>2026-05-09</lastmod>
@@ -79,7 +108,7 @@
   <!-- Utility -->
   <url>
     <loc>https://aniruddhgohil.github.io/aniruddh-profile/sitemap.html</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>

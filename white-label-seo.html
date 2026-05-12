@@ -18,11 +18,17 @@
   <meta property="og:description" content="Outsource Technical SEO, eCommerce SEO, Local SEO, and Content Strategy under your agency's brand. NDA-backed, timely, fully invisible.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://aniruddhgohil.github.io/aniruddh-profile/white-label-seo.html">
-  <meta property="og:image" content="https://aniruddhgohil.github.io/aniruddh-profile/aniruddh.webp">
+  <meta property="og:image" content="https://aniruddhgohil.github.io/aniruddh-profile/og-white-label-seo.svg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://aniruddhgohil.github.io/aniruddh-profile/aniruddh.webp">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aniruddhgohil.github.io/aniruddh-profile/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://aniruddhgohil.github.io/aniruddh-profile/services.html"},{"@type":"ListItem","position":3,"name":"White Label SEO","item":"https://aniruddhgohil.github.io/aniruddh-profile/white-label-seo.html"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Service","name":"White Label SEO","description":"White label SEO for agencies and consultants. All four SEO services delivered under your brand — NDA-backed, fully invisible, and timely.","serviceType":"White Label SEO","provider":{"@type":"Person","name":"Aniruddh Gohil","url":"https://aniruddhgohil.github.io/aniruddh-profile/","sameAs":["https://www.linkedin.com/in/gohil-aniruddh/"]},"areaServed":[{"@type":"Country","name":"Australia"},{"@type":"Country","name":"New Zealand"},{"@type":"Country","name":"United Arab Emirates"},{"@type":"Country","name":"India"},{"@type":"Country","name":"United States"}],"url":"https://aniruddhgohil.github.io/aniruddh-profile/white-label-seo.html"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you sign NDAs?","acceptedAnswer":{"@type":"Answer","text":"Yes. A mutual NDA can be signed before any work begins. Confidentiality is standard practice."}},{"@type":"Question","name":"Will my clients ever know you're involved?","acceptedAnswer":{"@type":"Answer","text":"Never. All deliverables carry your agency's name. I don't communicate with your clients or appear on calls with them."}},{"@type":"Question","name":"Can I see samples of your work before starting?","acceptedAnswer":{"@type":"Answer","text":"Yes. Case studies are available on the site, and anonymised deliverable samples can be shared on request."}},{"@type":"Question","name":"How do you handle revisions?","acceptedAnswer":{"@type":"Answer","text":"Revisions are included in the project scope. If a deliverable doesn't meet the agreed brief, I'll revise it at no extra charge."}},{"@type":"Question","name":"What formats do deliverables come in?","acceptedAnswer":{"@type":"Answer","text":"Typically Google Docs or Sheets, formatted to be dropped into your branded templates. Reports can be delivered as PDFs or Google Slides with your logo applied."}},{"@type":"Question","name":"Is there a minimum project size?","acceptedAnswer":{"@type":"Answer","text":"No hard minimum. I work on one-off projects and ongoing monthly retainers. Send a brief and I'll respond with a scope and price within 24 hours."}}]}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -233,6 +239,34 @@
     .wl-nda__icon { font-size: 1.8rem; flex-shrink: 0; line-height: 1; }
     .wl-nda__title { font-weight: 700; color: #3730a3; font-size: 0.95rem; margin-bottom: 6px; }
     .wl-nda__desc { font-size: 0.84rem; color: #4338ca; line-height: 1.65; }
+
+    /* ── FAQ ──────────────────────────────────────────── */
+    .wl-faq { display: flex; flex-direction: column; }
+    .wl-faq__item {
+      border-bottom: 1px solid var(--border);
+    }
+    .wl-faq__item:first-child { border-top: 1px solid var(--border); }
+    .wl-faq__q {
+      list-style: none;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 20px 4px;
+      font-size: 0.975rem; font-weight: 600; color: var(--ink);
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .wl-faq__q::-webkit-details-marker { display: none; }
+    .wl-faq__q::after {
+      content: '+';
+      font-size: 1.4rem; font-weight: 300; color: var(--ink-muted);
+      flex-shrink: 0; transition: transform 0.25s, color 0.2s;
+    }
+    .wl-faq__item[open] > .wl-faq__q { color: #4f46e5; }
+    .wl-faq__item[open] > .wl-faq__q::after { transform: rotate(45deg); color: #4f46e5; }
+    .wl-faq__a {
+      padding: 0 4px 20px;
+      font-size: 0.875rem; line-height: 1.8; color: var(--ink-soft);
+      max-width: 720px;
+    }
 
     /* ── Related services ──────────────────────────────── */
     .sp-related { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -645,6 +679,55 @@
           <span class="sp-tag">Honest scoping — no overselling</span>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- ── FAQ ─────────────────────────────────────────── -->
+  <div class="sp-section">
+    <span class="sp-section__label">Common questions</span>
+    <h2 class="sp-section__title">Frequently asked questions</h2>
+    <div class="wl-faq">
+
+      <details class="wl-faq__item">
+        <summary class="wl-faq__q">Do you sign NDAs?</summary>
+        <p class="wl-faq__a">Yes, absolutely. A mutual NDA can be signed before any work begins — or even before the first call if you'd prefer. Confidentiality is standard practice, not an add-on.</p>
+      </details>
+
+      <details class="wl-faq__item">
+        <summary class="wl-faq__q">Will my clients ever know you're involved?</summary>
+        <p class="wl-faq__a">Never. All deliverables carry your agency's name. I don't communicate with your clients, appear on calls with them, or have any visible presence in the project. You present the work as your own — because effectively it is.</p>
+      </details>
+
+      <details class="wl-faq__item">
+        <summary class="wl-faq__q">Can I see samples of your work before starting?</summary>
+        <p class="wl-faq__a">Yes. You can review the case studies on this site, and I'm happy to share anonymised deliverable samples (audit reports, content briefs, strategy documents) on request during our initial conversation.</p>
+      </details>
+
+      <details class="wl-faq__item">
+        <summary class="wl-faq__q">How do you handle revisions?</summary>
+        <p class="wl-faq__a">Revisions are included as part of the project scope. If a deliverable doesn't meet the agreed brief, I'll revise it until it does — no extra charge for reasonable amends. I aim to get it right the first time by asking the right questions upfront.</p>
+      </details>
+
+      <details class="wl-faq__item">
+        <summary class="wl-faq__q">What formats do deliverables come in?</summary>
+        <p class="wl-faq__a">Typically Google Docs or Sheets for strategies, briefs, and audits — easy to copy into your own branded templates. Reports can be formatted in Google Slides or a PDF-ready layout with your logo applied. If you have a preferred format, just let me know.</p>
+      </details>
+
+      <details class="wl-faq__item">
+        <summary class="wl-faq__q">Do you work with multiple agencies at the same time?</summary>
+        <p class="wl-faq__a">Yes, but I keep the roster intentionally small so every client gets focused attention. If you're on a monthly retainer, I'll allocate dedicated capacity so your projects are never deprioritised.</p>
+      </details>
+
+      <details class="wl-faq__item">
+        <summary class="wl-faq__q">How do we communicate during a project?</summary>
+        <p class="wl-faq__a">WhatsApp for quick updates and questions, email for formal briefs and deliverable handoffs. I'll send status updates at key milestones so you're never chasing for an update.</p>
+      </details>
+
+      <details class="wl-faq__item">
+        <summary class="wl-faq__q">Is there a minimum project size?</summary>
+        <p class="wl-faq__a">No hard minimum — I work on both one-off projects (a single audit, a content strategy) and ongoing monthly retainers. The best way to start is to send me a brief and I'll respond with a clear scope and price within 24 hours.</p>
+      </details>
+
     </div>
   </div>
 
