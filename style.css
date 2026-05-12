@@ -776,39 +776,56 @@ h2 {
 
 /* ── CLIENTS ── */
 #clients {
-  padding: 52px 60px;
+  padding: 56px 60px;
   text-align: center;
 }
 .clients-label {
   font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--ink-muted);
-  margin-bottom: 36px;
+  margin-bottom: 40px;
 }
 .clients-grid {
-  display: flex; flex-wrap: wrap;
-  justify-content: center; align-items: center;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
 }
 .client-item {
-  display: flex; flex-direction: column; align-items: center;
-  padding: 12px 36px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 32px 20px 24px;
   border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+  transition: background 0.2s;
+  min-height: 110px;
 }
-.client-item:last-child { border-right: none; }
+/* Remove right border on last column */
+.client-item:nth-child(6n) { border-right: none; }
+/* Remove bottom border on last row */
+.client-item:nth-last-child(-n+6):nth-child(6n+1),
+.client-item:nth-last-child(-n+6):nth-child(6n+2),
+.client-item:nth-last-child(-n+6):nth-child(6n+3),
+.client-item:nth-last-child(-n+6):nth-child(6n+4),
+.client-item:nth-last-child(-n+6):nth-child(6n+5),
+.client-item:nth-last-child(-n+6):nth-child(6n) { border-bottom: none; }
+.client-item:hover { background: var(--cream); }
 .client-logo-img {
-  max-height: 38px;
+  max-height: 40px;
   width: auto;
-  max-width: 120px;
+  max-width: 130px;
   object-fit: contain;
-  filter: grayscale(100%) opacity(0.55);
+  filter: grayscale(100%) opacity(0.5);
   transition: filter 0.25s;
 }
 .client-item:hover .client-logo-img {
   filter: grayscale(0%) opacity(1);
 }
 .client-region {
-  font-size: 0.65rem; font-weight: 500; letter-spacing: 0.09em;
+  font-size: 0.63rem; font-weight: 600; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--ink-muted);
-  margin-top: 6px;
+  margin-top: 10px;
 }
 
 /* ── TOOL MOCKUP ── */
@@ -1197,10 +1214,20 @@ footer {
   .hero-stats { gap: 0; padding-bottom: 4px; }
   .hero-stat { padding: 14px 18px; }
   .hero-stat:first-child { padding-left: 0; }
-  #clients { padding: 36px 24px; }
-  .clients-grid { gap: 0; }
-  .client-item { padding: 14px 20px; border-right: none; border-bottom: 1px solid var(--border); width: 50%; }
-  .client-item:nth-last-child(-n+2) { border-bottom: none; }
+  #clients { padding: 40px 24px; }
+  .clients-grid { grid-template-columns: repeat(3, 1fr); }
+  .client-item { min-height: 90px; padding: 24px 12px 18px; }
+  .client-item:nth-child(6n) { border-right: 1px solid var(--border); }
+  .client-item:nth-child(3n) { border-right: none; }
+  .client-item:nth-last-child(-n+6):nth-child(6n+1),
+  .client-item:nth-last-child(-n+6):nth-child(6n+2),
+  .client-item:nth-last-child(-n+6):nth-child(6n+3),
+  .client-item:nth-last-child(-n+6):nth-child(6n+4),
+  .client-item:nth-last-child(-n+6):nth-child(6n+5),
+  .client-item:nth-last-child(-n+6):nth-child(6n) { border-bottom: 1px solid var(--border); }
+  .client-item:nth-last-child(-n+3):nth-child(3n+1),
+  .client-item:nth-last-child(-n+3):nth-child(3n+2),
+  .client-item:nth-last-child(-n+3):nth-child(3n) { border-bottom: none; }
   .expertise-grid { grid-template-columns: 1fr; }
   .tool-shell { grid-template-columns: 1fr; min-height: 0; }
   .tool-list { border-right: 0; border-bottom: 1px solid var(--border); padding: 28px 22px; }
