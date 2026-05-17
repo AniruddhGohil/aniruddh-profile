@@ -831,6 +831,9 @@ h2 {
 .client-item:hover .client-logo-img {
   filter: grayscale(0%) opacity(1);
 }
+/* White/light logos — invert to dark so they're visible on white background */
+.client-logo--invert { filter: invert(1) grayscale(100%) opacity(0.5); }
+.client-item:hover .client-logo--invert { filter: invert(1) grayscale(0%) opacity(1); }
 .client-region {
   font-size: 0.63rem; font-weight: 600; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--ink-muted);
