@@ -924,30 +924,31 @@ h2 {
 .preview-cta:hover { transform: translateY(-2px); filter: brightness(1.03); }
 
 /* ── PROCESS ── */
-#process { background: var(--ink); color: var(--white); }
-#process .section-label { color: var(--gold); }
-#process h2 { color: var(--white); }
-#process .section-intro { color: rgba(255,255,255,0.6); }
+#process { background: var(--cream); color: var(--ink); }
+#process .section-label { color: var(--accent); }
+#process h2 { color: var(--ink); }
+#process .section-intro { color: var(--ink-soft); }
 .process-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; margin-top: 60px; min-height: 200px; }
 .process-steps::before {
   content: ''; position: absolute; top: 28px; left: 12%; right: 12%;
-  height: 1px; background: rgba(255,255,255,0.12);
+  height: 1px; background: var(--border);
 }
 .step { padding: 0 24px; text-align: center; }
 .step-num {
   width: 56px; height: 56px; border-radius: 50%;
-  border: 1.5px solid rgba(255,255,255,0.2);
-  background: var(--ink); display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid var(--border);
+  background: var(--white); display: flex; align-items: center; justify-content: center;
   margin: 0 auto 24px;
   font-family: 'Playfair Display', serif; font-size: 1.1rem;
-  color: var(--gold); font-weight: 600; position: relative; z-index: 1;
+  color: var(--accent); font-weight: 600; position: relative; z-index: 1;
+  box-shadow: 0 2px 8px rgba(26,86,219,0.1);
 }
-.step-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--white); margin-bottom: 10px; }
-.step-desc { font-size: 0.82rem; line-height: 1.65; color: rgba(255,255,255,0.5); }
+.step-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+.step-desc { font-size: 0.82rem; line-height: 1.65; color: var(--ink-muted); }
 
 /* ── PROFILES ── */
 /* ── CONTACT ── */
-#contact { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.1); }
+#contact { background: var(--ink); border-top: none; }
 .contact-wrap {
   max-width: 1200px; margin: 0 auto;
   padding: 96px 60px;
