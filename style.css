@@ -1344,20 +1344,20 @@ footer {
   .hero-float-card { display: none; }
   .hero-float-card-2 { display: none; }
   .hero-dot-grid { display: none; }
-  #clients { padding: 40px 24px; }
-  .clients-grid { grid-template-columns: repeat(3, 1fr); }
-  .client-item { min-height: 90px; padding: 24px 12px 18px; }
+  #clients { padding: 40px 20px; }
+  .clients-grid { grid-template-columns: repeat(2, 1fr); }
+  .client-item { min-height: 90px; padding: 24px 16px 18px; }
+  /* Reset 6-col right-border rule, apply 2-col rule */
   .client-item:nth-child(6n) { border-right: 1px solid var(--border); }
-  .client-item:nth-child(3n) { border-right: none; }
+  .client-item:nth-child(2n) { border-right: none; }
+  /* Reset 6-col bottom-border rules, apply 2-col last-row rule */
   .client-item:nth-last-child(-n+6):nth-child(6n+1),
   .client-item:nth-last-child(-n+6):nth-child(6n+2),
   .client-item:nth-last-child(-n+6):nth-child(6n+3),
   .client-item:nth-last-child(-n+6):nth-child(6n+4),
   .client-item:nth-last-child(-n+6):nth-child(6n+5),
   .client-item:nth-last-child(-n+6):nth-child(6n) { border-bottom: 1px solid var(--border); }
-  .client-item:nth-last-child(-n+3):nth-child(3n+1),
-  .client-item:nth-last-child(-n+3):nth-child(3n+2),
-  .client-item:nth-last-child(-n+3):nth-child(3n) { border-bottom: none; }
+  .client-item:nth-last-child(-n+2) { border-bottom: none; }
   .expertise-grid { grid-template-columns: 1fr; }
   .tool-shell { grid-template-columns: 1fr; min-height: 0; }
   .tool-list { border-right: 0; border-bottom: 1px solid var(--border); padding: 28px 22px; }
