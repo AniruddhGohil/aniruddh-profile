@@ -1347,7 +1347,8 @@ footer {
   .hero-dot-grid { display: none; }
   #clients { padding: 40px 20px; }
   .clients-grid { grid-template-columns: repeat(2, 1fr); }
-  .client-item { min-height: 90px; padding: 24px 16px 18px; }
+  .client-item { min-height: 100px; padding: 20px 16px 38px; }
+  .client-logo-img { max-height: 32px; max-width: 110px; }
   /* Reset 6-col right-border rule, apply 2-col rule */
   .client-item:nth-child(6n) { border-right: 1px solid var(--border); }
   .client-item:nth-child(2n) { border-right: none; }
