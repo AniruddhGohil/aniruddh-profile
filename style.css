@@ -317,7 +317,6 @@ h1 em { font-style: italic; color: var(--accent); }
 .hero-image-wrap {
   position: relative; z-index: 1;
   display: flex; justify-content: flex-start; align-items: center;
-  opacity: 0; animation: fadeIn 0.4s 0.05s forwards;
   overflow: visible;
   grid-row: 1; grid-column: 2;
 }
@@ -972,12 +971,8 @@ h2 {
   width: 8px; height: 8px; border-radius: 50%;
   background: #4ade80;
   box-shadow: 0 0 0 3px rgba(74,222,128,0.25);
-  animation: pulse-green 2s ease-in-out infinite;
+  animation: pulse 2s ease-in-out infinite;
   flex-shrink: 0;
-}
-@keyframes pulse-green {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(74,222,128,0.25); }
-  50%       { box-shadow: 0 0 0 6px rgba(74,222,128,0.08); }
 }
 .contact-heading {
   font-family: 'Playfair Display', serif;
