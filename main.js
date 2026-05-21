@@ -152,4 +152,20 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
+  /* ── GTM dataLayer event tracking ──
+     Any element with data-gtm-event fires a dataLayer push on click.
+     data-gtm-event  → event name  (e.g. "whatsapp_click")
+     data-gtm-label  → label/slot  (e.g. "contact_section")
+  ── */
+  window.dataLayer = window.dataLayer || [];
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-gtm-event]');
+    if (!el) return;
+    window.dataLayer.push({
+      event:      el.dataset.gtmEvent,
+      gtm_label:  el.dataset.gtmLabel || '',
+      link_url:   el.href || ''
+    });
+  });
+
 }());
