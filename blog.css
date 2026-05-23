@@ -36,6 +36,7 @@ nav {
 }
 nav.scrolled { padding: 14px 60px; }
 .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); font-size: 0.9rem; font-weight: 500; }
+.nav-logo::after { content: 'Aniruddh Gohil'; font-size: 0.875rem; font-weight: 600; color: var(--ink); letter-spacing: -0.01em; }
 .nav-logo-img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--border); }
 .nav-cta {
   background: var(--ink); color: var(--white) !important;
@@ -232,10 +233,11 @@ nav.scrolled { padding: 14px 60px; }
   color: var(--white);
 }
 .post-hero__inner { max-width: 800px; margin: 0 auto; }
-.post-hero .breadcrumb a { color: rgba(255,255,255,0.5); }
-.post-hero .breadcrumb li { color: rgba(255,255,255,0.4); }
-.post-hero .breadcrumb li[aria-current="page"] { color: rgba(255,255,255,0.7); }
-.post-hero .breadcrumb li:not(:last-child)::after { color: rgba(255,255,255,0.2); }
+.post-hero .breadcrumb a { color: rgba(255,255,255,0.8); }
+.post-hero .breadcrumb a:hover { color: #ffffff; }
+.post-hero .breadcrumb li { color: rgba(255,255,255,0.65); }
+.post-hero .breadcrumb li[aria-current="page"] { color: rgba(255,255,255,0.95); }
+.post-hero .breadcrumb li:not(:last-child)::after { color: rgba(255,255,255,0.35); }
 .post-hero__meta {
   display: flex; align-items: center; gap: 12px;
   margin-bottom: 24px; flex-wrap: wrap;
