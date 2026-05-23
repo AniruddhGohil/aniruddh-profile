@@ -952,9 +952,9 @@ h2 {
 .assoc-item:last-child { border-right: none; }
 .assoc-item:hover { background: var(--cream); }
 .assoc-logo {
-  max-height: 36px;
+  max-height: 52px;
   width: auto;
-  max-width: 120px;
+  max-width: 140px;
   display: block;
   filter: grayscale(100%) opacity(0.5);
   transition: filter 0.25s;
@@ -1384,7 +1384,7 @@ footer {
   .assoc-item { border-bottom: 1px solid var(--border); }
   .assoc-item:nth-child(3n) { border-right: none; }
   .assoc-item:nth-last-child(-n+3) { border-bottom: none; }
-  .assoc-logo { max-height: 28px; max-width: 90px; }
+  .assoc-logo { max-height: 40px; max-width: 110px; }
   .clients-grid { grid-template-columns: repeat(2, 1fr); }
   .client-item { min-height: 100px; padding: 20px 16px 38px; }
   .client-logo-img { max-height: 32px; max-width: 110px; }
