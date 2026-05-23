@@ -931,11 +931,8 @@ h2 {
 }
 #associations h2 { margin-bottom: 40px; }
 .assoc-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   border: 1px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
@@ -943,7 +940,6 @@ h2 {
   margin: 0 auto;
 }
 .assoc-item {
-  flex: 1 1 calc(100% / 6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1384,7 +1380,8 @@ footer {
   .hero-dot-grid { display: none; }
   #clients { padding: 40px 20px; }
   #associations { padding: 40px 20px; }
-  .assoc-item { flex: 1 1 calc(100% / 3); border-bottom: 1px solid var(--border); }
+  .assoc-grid { grid-template-columns: repeat(3, 1fr); }
+  .assoc-item { border-bottom: 1px solid var(--border); }
   .assoc-item:nth-child(3n) { border-right: none; }
   .assoc-item:nth-last-child(-n+3) { border-bottom: none; }
   .assoc-logo { max-height: 28px; max-width: 90px; }
