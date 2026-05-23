@@ -1,6 +1,7 @@
 {
   "permissions": {
-    "allow": [
+    "allow": [],
+    "ask": [
       "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\Aniruddh Gohil\\\\aniruddh-profile\" -Force)",
       "Bash(Select-Object Name, PSIsContainer)"
     ]
