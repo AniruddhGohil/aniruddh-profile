@@ -65,6 +65,9 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQPT8MTZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+<!-- READING PROGRESS BAR -->
+<div id="read-progress"></div>
+
 <!-- NAV -->
 <nav id="navbar">
   <a href="/aniruddh-profile/" class="nav-logo">
@@ -341,9 +344,16 @@
 (function () {
   'use strict';
   var navbar = document.getElementById('navbar');
-  if (navbar) {
-    window.addEventListener('scroll', function () { navbar.classList.toggle('scrolled', window.scrollY > 40); });
-  }
+  var progressBar = document.getElementById('read-progress');
+  window.addEventListener('scroll', function () {
+    if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 40);
+    if (progressBar) {
+      var doc = document.documentElement;
+      var scrolled = doc.scrollTop || document.body.scrollTop;
+      var total = doc.scrollHeight - doc.clientHeight;
+      progressBar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+    }
+  });
   var reveals = document.querySelectorAll('.reveal');
   if (reveals.length && 'IntersectionObserver' in window) {
     var ro = new IntersectionObserver(function (entries) {
