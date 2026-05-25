@@ -1414,4 +1414,6 @@ footer {
   .contact-heading { font-size: clamp(1.8rem, 5vw, 2.4rem); }
   .contact-sub { max-width: 100%; }
   footer { flex-direction: column; gap: 12px; text-align: center; padding: 32px 24px; }
+  #backToTop { display: none; }
+  .avail-chip { bottom: 16px; right: 16px; font-size: 0.8rem; padding: 10px 14px; gap: 8px; }
 }
