@@ -495,7 +495,7 @@ body {
   .blog-index { padding: 48px 24px; }
 
   .blog-featured { grid-template-columns: 1fr; }
-  .blog-featured__visual { min-height: 200px; }
+  .blog-featured__visual { height: 240px; min-height: unset; background-position: top center; }
   .blog-featured__body { padding: 28px; }
 
   .blog-grid { grid-template-columns: 1fr; }
