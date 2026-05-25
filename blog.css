@@ -147,24 +147,18 @@ body {
 .blog-featured:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
 .blog-featured__visual {
   background-color: #0f1117;
+  background-size: cover;
+  background-position: center;
   min-height: 320px;
   display: flex; align-items: flex-end;
   padding: 28px;
   position: relative;
   overflow: hidden;
 }
-.blog-featured__visual-img {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: 0;
-}
 .blog-featured__visual::before {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(15,17,23,0.15) 0%, rgba(15,17,23,0.5) 100%);
-  z-index: 1;
+  background: linear-gradient(to bottom, rgba(15,17,23,0.3) 0%, rgba(15,17,23,0.75) 100%);
 }
 .blog-featured__visual-credit {
   position: relative; z-index: 1;
