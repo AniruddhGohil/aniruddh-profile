@@ -148,7 +148,7 @@ body {
 .blog-featured__visual {
   background-color: #0f1117;
   background-size: cover;
-  background-position: center;
+  background-position: 65% center;
   min-height: 320px;
   display: flex; align-items: flex-end;
   padding: 28px;
