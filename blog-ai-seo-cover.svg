@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#060c1a"/>
+      <stop offset="100%" stop-color="#0b1e3c"/>
+    </linearGradient>
+    <linearGradient id="aiBox" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#112d5e"/>
+      <stop offset="100%" stop-color="#091c3a"/>
+    </linearGradient>
+    <radialGradient id="glowL" cx="30%" cy="55%" r="50%" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a56db" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#1a56db" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowR" cx="80%" cy="35%" r="40%" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="24" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="dots" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="1.1" fill="#ffffff" opacity="0.055"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glowL)"/>
+  <rect width="1200" height="630" fill="url(#glowR)"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- ── SEARCH RESULTS PANEL ── -->
+  <rect x="72" y="64" width="628" height="508" rx="18" fill="rgba(255,255,255,0.022)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+
+  <!-- Search bar -->
+  <rect x="104" y="96" width="564" height="44" rx="22" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.11)" stroke-width="1"/>
+  <text x="140" y="123" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="rgba(255,255,255,0.36)">best seo strategy for ai search</text>
+  <circle cx="638" cy="118" r="8" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1.5"/>
+  <line x1="644" y1="124" x2="650" y2="130" stroke="rgba(255,255,255,0.22)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- ── AI OVERVIEW BOX ── -->
+  <!-- Outer glow -->
+  <rect x="104" y="162" width="564" height="228" rx="14" fill="url(#aiBox)" filter="url(#glow)" opacity="0.5"/>
+  <!-- Box itself -->
+  <rect x="104" y="162" width="564" height="228" rx="14" fill="url(#aiBox)" stroke="rgba(59,130,246,0.5)" stroke-width="1.5"/>
+  <!-- Top highlight -->
+  <rect x="104" y="162" width="564" height="1.5" rx="1" fill="rgba(147,197,253,0.3)"/>
+
+  <!-- ✦ AI Overview header -->
+  <text x="130" y="196" font-family="Helvetica,Arial,sans-serif" font-size="13.5" font-weight="700" fill="#93c5fd">✦  AI Overview</text>
+  <line x1="130" y1="208" x2="648" y2="208" stroke="rgba(147,197,253,0.18)" stroke-width="1"/>
+
+  <!-- Text lines -->
+  <rect x="130" y="222" width="360" height="9" rx="4.5" fill="rgba(255,255,255,0.6)"/>
+  <rect x="130" y="240" width="460" height="9" rx="4.5" fill="rgba(255,255,255,0.38)"/>
+  <rect x="130" y="258" width="420" height="9" rx="4.5" fill="rgba(255,255,255,0.38)"/>
+  <rect x="130" y="276" width="310" height="9" rx="4.5" fill="rgba(255,255,255,0.3)"/>
+
+  <!-- Source chips -->
+  <rect x="130" y="308" width="106" height="22" rx="11" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+  <text x="183" y="323.5" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.42)" text-anchor="middle">semrush.com</text>
+  <rect x="246" y="308" width="106" height="22" rx="11" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+  <text x="299" y="323.5" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.42)" text-anchor="middle">ahrefs.com</text>
+  <rect x="362" y="308" width="106" height="22" rx="11" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+  <text x="415" y="323.5" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="rgba(255,255,255,0.42)" text-anchor="middle">searchengineland</text>
+
+  <!-- Sources expand -->
+  <text x="130" y="363" font-family="Helvetica,Arial,sans-serif" font-size="11.5" fill="rgba(147,197,253,0.55)">Sources  ∨</text>
+
+  <!-- ── ORGANIC RESULTS (faded / pushed down) ── -->
+  <!-- Divider label -->
+  <text x="130" y="413" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="rgba(255,255,255,0.2)" letter-spacing="0.08em">ORGANIC RESULTS</text>
+
+  <!-- Result 1 -->
+  <text x="130" y="432" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="rgba(134,239,172,0.35)">https://semrush.com › blog › ai-seo-guide</text>
+  <rect x="130" y="439" width="250" height="8" rx="4" fill="rgba(255,255,255,0.18)"/>
+  <rect x="130" y="454" width="430" height="7" rx="3.5" fill="rgba(255,255,255,0.1)"/>
+
+  <!-- Result 2 -->
+  <text x="130" y="474" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="rgba(134,239,172,0.22)">https://ahrefs.com › blog › ai-overviews-seo</text>
+  <rect x="130" y="481" width="210" height="8" rx="4" fill="rgba(255,255,255,0.11)"/>
+  <rect x="130" y="496" width="370" height="7" rx="3.5" fill="rgba(255,255,255,0.07)"/>
+
+  <!-- Result 3 — barely visible -->
+  <text x="130" y="516" font-family="Helvetica,Arial,sans-serif" font-size="9.5" fill="rgba(134,239,172,0.13)">https://moz.com › blog › seo-after-ai-overviews</text>
+  <rect x="130" y="523" width="180" height="8" rx="4" fill="rgba(255,255,255,0.07)"/>
+  <rect x="130" y="538" width="320" height="7" rx="3.5" fill="rgba(255,255,255,0.04)"/>
+
+  <!-- Organic decline arrow (right of panel) -->
+  <text x="724" y="466" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="rgba(248,113,113,0.6)" letter-spacing="0.07em" text-anchor="middle">ORGANIC</text>
+  <text x="724" y="500" font-family="Helvetica,Arial,sans-serif" font-size="32" fill="rgba(248,113,113,0.55)" text-anchor="middle">↓</text>
+
+  <!-- ── RIGHT STATS ── -->
+
+  <!-- 8% — large stat -->
+  <!-- Glow layer -->
+  <text x="790" y="252" font-family="Georgia,Times,serif" font-size="118" font-weight="700" fill="#1a56db" opacity="0.35" filter="url(#softglow)">8%</text>
+  <!-- Main text -->
+  <text x="790" y="252" font-family="Georgia,Times,serif" font-size="118" font-weight="700" fill="#3b82f6">8%</text>
+  <text x="793" y="282" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.38)" letter-spacing="0.08em">CTR WHEN AI OVERVIEW SHOWS</text>
+
+  <!-- Divider -->
+  <line x1="786" y1="304" x2="1136" y2="304" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+  <!-- 50%+ stat -->
+  <text x="793" y="385" font-family="Georgia,Times,serif" font-size="76" font-weight="700" fill="rgba(255,255,255,0.6)">50%+</text>
+  <text x="793" y="412" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="rgba(255,255,255,0.32)" letter-spacing="0.08em">SEARCHES END ZERO-CLICK</text>
+
+  <!-- Decorative concentric rings (bottom right) -->
+  <circle cx="980" cy="530" r="52" fill="none" stroke="rgba(59,130,246,0.14)" stroke-width="1"/>
+  <circle cx="980" cy="530" r="74" fill="none" stroke="rgba(59,130,246,0.09)" stroke-width="1"/>
+  <circle cx="980" cy="530" r="96" fill="none" stroke="rgba(59,130,246,0.055)" stroke-width="1"/>
+  <circle cx="980" cy="530" r="4" fill="rgba(59,130,246,0.5)"/>
+
+  <!-- Attribution -->
+  <text x="793" y="582" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="rgba(255,255,255,0.16)" letter-spacing="0.1em">ANIRUDDH GOHIL  ·  AI SEARCH INSIGHTS  ·  2026</text>
+</svg>
