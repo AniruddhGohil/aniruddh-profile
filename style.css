@@ -118,72 +118,57 @@ nav.scrolled { border-color: var(--border); padding: 12px 60px; }
 
 /* ── MOBILE DRAWER ── */
 .nav-drawer {
-  position: fixed; top: 0; right: 0;
-  width: 260px; height: 100vh;
-  background: #ffffff;
-  z-index: 300;
-  display: flex; flex-direction: column;
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
-  box-shadow: -2px 0 20px rgba(0,0,0,0.12);
+  position: fixed; top: 0; right: -100%; width: 280px; height: 100%;
+  background: var(--white); z-index: 300;
+  padding: 24px 20px;
+  display: flex; flex-direction: column; gap: 4px;
   overflow-y: auto;
+  transition: right 0.3s ease;
+  box-shadow: -4px 0 24px rgba(0,0,0,0.1);
 }
-.nav-drawer.open { transform: translateX(0); }
+.nav-drawer.open { right: 0; }
 
 .nav-drawer__header {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 20px; border-bottom: 1px solid var(--border);
-  background: var(--cream); flex-shrink: 0;
+  margin-bottom: 16px; padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
 }
-.nav-drawer__label {
-  font-size: 0.7rem; font-weight: 700;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ink-muted);
-}
+.nav-drawer__label { font-weight: 600; font-size: 0.9rem; color: var(--ink); }
 .nav-drawer__close {
-  width: 30px; height: 30px; border-radius: 50%;
-  background: var(--border); border: none;
-  font-size: 0.85rem; color: var(--ink);
-  cursor: pointer; display: flex; align-items: center; justify-content: center;
-  transition: background 0.2s;
+  background: none; border: none; font-size: 1.1rem;
+  cursor: pointer; color: var(--ink-muted); padding: 4px 8px;
 }
-.nav-drawer__close:hover { background: var(--ink); color: #fff; }
 
 .nav-drawer__link {
-  display: block; padding: 14px 20px;
+  text-decoration: none; color: var(--ink-soft);
   font-size: 0.9rem; font-weight: 500;
-  color: var(--ink); text-decoration: none;
-  border-bottom: 1px solid var(--border);
-  transition: color 0.2s, background 0.2s;
+  padding: 10px 8px; border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
 }
-.nav-drawer__link:hover { color: var(--accent); background: var(--cream); }
+.nav-drawer__link:hover { background: var(--cream); color: var(--accent); }
 
-.nav-drawer__group { border-bottom: 1px solid var(--border); }
+.nav-drawer__group { display: flex; flex-direction: column; }
 .nav-drawer__group-btn {
   display: flex; align-items: center; justify-content: space-between;
-  width: 100%; padding: 14px 20px;
-  font-size: 0.9rem; font-weight: 500;
-  color: var(--ink-soft); background: none; border: none;
-  font-family: inherit; cursor: pointer;
-  transition: color 0.2s;
+  background: none; border: none; font-family: inherit;
+  font-size: 0.9rem; font-weight: 500; color: var(--ink-soft);
+  padding: 10px 8px; cursor: pointer; border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
 }
-.nav-drawer__group-btn:hover { color: var(--accent); }
-.nav-drawer__sub { display: none; background: var(--cream); }
-.nav-drawer__sub.open { display: block; }
+.nav-drawer__group-btn:hover { background: var(--cream); color: var(--accent); }
+.nav-drawer__sub { display: none; flex-direction: column; padding-left: 16px; gap: 2px; }
+.nav-drawer__sub.open { display: flex; }
 .nav-drawer__sublink {
-  display: block; padding: 11px 32px;
-  font-size: 0.82rem; color: var(--ink-soft);
-  text-decoration: none; border-top: 1px solid var(--border);
-  transition: color 0.2s;
+  text-decoration: none; color: var(--ink-muted);
+  font-size: 0.85rem; padding: 8px 8px; border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
 }
-.nav-drawer__sublink:hover { color: var(--accent); }
+.nav-drawer__sublink:hover { background: var(--cream); color: var(--accent); }
 
 .nav-drawer__cta {
-  display: block; margin: 20px 20px;
-  padding: 12px 20px; border-radius: 8px;
-  background: var(--ink); color: #fff !important;
-  text-align: center; text-decoration: none;
-  font-size: 0.875rem; font-weight: 600;
+  margin-top: 12px; background: var(--ink); color: var(--white);
+  text-decoration: none; padding: 12px 20px; border-radius: 8px;
+  font-size: 0.9rem; font-weight: 600; text-align: center;
   transition: background 0.2s;
 }
 .nav-drawer__cta:hover { background: var(--accent); }
