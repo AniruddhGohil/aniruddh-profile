@@ -4,7 +4,7 @@
 (function () {
   'use strict';
 
-  var ENABLED = true;
+  var ENABLED = false;
   if (!ENABLED) return;
 
   /* 1. Disable right-click context menu */
